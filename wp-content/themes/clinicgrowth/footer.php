@@ -11,7 +11,16 @@
 								<h4 class="font-bold l-h-1 title color-tertiary000 color-secondary">Discover what’s holding your clinic back and get a clear, tailored plan to grow.</h4>
 							</div>
 							<div class="col-1-4">
-								<button class="background-tertiary color-white hover-background-secondary">Book Your Free Growth Audit</button>
+								<div class="flex center-right">
+								<a
+									class="display-block"
+									href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
+									target="_blank"
+									rel='noreferrer'
+								>
+									<button class="background-tertiary color-white hover-background-secondary">Book Your Free Growth Audit</button>
+								</a>
+								</div>
 							</div>
 						</div>				
 					</section>

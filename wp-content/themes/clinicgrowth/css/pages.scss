@@ -94,7 +94,7 @@
 	.grow {
 		padding: 120px 0;
 		.left {
-			button {
+			.btn {
 				margin-top: 32px;
 			}
 		}
@@ -156,7 +156,7 @@
 	.testimonials {
 		padding: 120px 0;
 		.left {
-			button {
+			.btn {
 				margin-top: 32px;
 			}
 		}
@@ -362,6 +362,128 @@
 }
 
 /* =================================
+	Results Page
+================================= */
+
+#results-page {
+	.results {
+		padding: 120px 0;
+		.all {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(auto-fill, auto);
+			grid-row-gap: 60px;
+			grid-column-gap: 60px;
+			.single {
+				@include vendorPrefix("border-radius", "8px");
+				overflow: hidden;
+				a {
+					display: block;
+				}
+				.row {
+					gap: 80px;
+				}
+				.img {
+					height: 300px;
+					img {
+						width: 100%;
+						height: auto;
+						display: none;
+					}
+				}
+				.desc {
+					background-color: #f8f8f8;
+					padding: 16px 20px 16px 20px;
+					.title {
+						display: -webkit-box;
+						-webkit-line-clamp: 1;
+						-webkit-box-orient: vertical;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
+				&:hover {
+					.desc {
+						background-color: $fadedBackgroundColor;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* =================================
+	Results Single Page
+================================= */
+
+#results-single-page {
+	.content {
+		padding: 80px 0;
+		.row {
+			flex-direction: row-reverse;
+		}
+		.left {
+			flex: 1;
+			padding-right: 80px;
+			hr.line {
+				outline: none;
+				border: none;
+				height: 4px;
+				width: 22px;
+				margin: 24px 0;
+				background-color: $primaryColor;
+			}
+			hr.sep {
+				background-color: $fadedBackgroundColor;
+				margin: 32px 0;
+			}
+		}
+		.right {
+			width: 420px;
+			.main-image {
+				@include vendorPrefix("border-radius", "6px");
+			}
+		}
+		.other-results {
+			margin-top: 32px;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(auto-fill, auto);
+			grid-row-gap: 30px;
+			grid-column-gap: 30px;
+			.one {
+				@include vendorPrefix("border-radius", "8px");
+				overflow: hidden;
+				._i {
+					height: 248px;
+					img {
+						width: 100%;
+						height: auto;
+						display: none;
+					}
+				}
+				.desc {
+					background-color: #f8f8f8;
+					padding: 16px;
+					.title {
+						display: -webkit-box;
+						-webkit-line-clamp: 1;
+						-webkit-box-orient: vertical;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
+				&:hover {
+					.desc {
+						background-color: $fadedBackgroundColor;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* =================================
 	Contact Page
 ================================= */
 
@@ -432,6 +554,15 @@
 				width: 22px;
 				margin: 16px auto;
 			}
+		}
+	}
+	.landing-with-image {
+		&::after {
+			position: absolute;
+			content: "";
+			inset: 0;
+			@include opacity(0.92, 92);
+			background: $fadedBackgroundColor;
 		}
 	}
 }

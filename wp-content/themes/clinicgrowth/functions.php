@@ -236,39 +236,30 @@
 
 				if ($allPosts->have_posts()):
 					echo '<div class="all">';
-						
-						$index = 0;
-
 						while($allPosts->have_posts()):$allPosts->the_post();
 							echo '<div class="single">';
 								echo '<a href="'. get_the_permalink() . '">';
-									echo '<div class="flex center-left row">';
-										echo '<div class="img cover-img" style="background-image: url(';
-												echo the_post_thumbnail_url();
-											echo ');">';
-											echo RANDOM_SVG_ICONS[$index % count(RANDOM_SVG_ICONS)];
-											echo '<img src="';
-												echo the_post_thumbnail_url();
-											echo '" alt="' . get_the_title() . '" />';
-										echo '</div>';
-										echo '<div class="desc">';
-											echo '<h5 class="font-medium title l-h-1">' . get_the_title() . '</h5>';
-											echo '<p class="small description color-light">';
-												echo substr(strip_tags(get_the_content()), 0, 480);
-											echo '</p>';
-											echo '<div class="flex center-left" style="gap: 8px;">';
-												echo '<p class="color-light small"><span class="hover-color-primary">Read more</span></p>';
-												echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
-														<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
-													</svg>';
-											echo '</div>';
-										echo '</div>';
+									echo '<div class="img cover-img" style="background-image: url(';
+											echo the_post_thumbnail_url();
+										echo ');">';
+										echo '<img src="';
+											echo the_post_thumbnail_url();
+										echo '" alt="' . get_the_title() . '" />';
 									echo '</div>';
+									echo '<div class="desc transition">';
+										echo '<p class="large font-medium title l-h-1-2">' . get_the_title() . '</p>';
+										echo '<p class="color-light l-h-1-2" style="font-size: 12px; margin-top: 6px; margin-bottom: 4px;">';
+											echo get_the_date('F j, Y');
+										echo '</p>';											
+										echo '<div class="flex center-right" style="gap: 8px;">';	
+											echo '<p class="color-light l-h-1" style="font-size: 14px;"><span class="hover-color-primary">Read more</span></p>';
+											echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
+													<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
+												</svg>';
+										echo '</div>';											
+									echo '</div>';									
 								echo '</a>';
 							echo '</div>';
-						
-						$index++;
-
 						endwhile;
 					echo '</div>';
 					wp_reset_postdata();
@@ -290,40 +281,31 @@
 				));
 
 				if ($allPosts->have_posts()):
-					echo '<div class="other-services">';
-						
-						$index = 0;
-
+					echo '<div class="other-results">';
 						while($allPosts->have_posts()):$allPosts->the_post();
 							echo '<div class="one">';
-								echo '<a href="'. get_the_permalink() . '">';
-									echo '<div class="flex center-left _row">';
-										echo '<div class="_i cover-img" style="background-image: url(';
-												echo the_post_thumbnail_url();
-											echo ');">';
-											echo RANDOM_SVG_ICONS[$index % count(RANDOM_SVG_ICONS)];
-											echo '<img src="';
-												echo the_post_thumbnail_url();
-											echo '" alt="' . get_the_title() . '" />';
-										echo '</div>';
-										echo '<div class="_d">';
-											echo '<p class="large font-medium title l-h-1 _title">' . get_the_title() . '</p>';
-											echo '<p class="small _description color-light">';
-												echo substr(strip_tags(get_the_content()), 0, 480);
-											echo '</p>';
-											echo '<div class="flex center-left" style="gap: 8px;">';
-												echo '<p class="color-light small"><span class="hover-color-primary">Read more</span></p>';
-												echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
-														<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
-													</svg>';
-											echo '</div>';
-										echo '</div>';
+								echo '<a href="'. get_the_permalink() . '">';									
+									echo '<div class="_i cover-img" style="background-image: url(';
+											echo the_post_thumbnail_url();
+										echo ');">';
+										echo '<img src="';
+											echo the_post_thumbnail_url();
+										echo '" alt="' . get_the_title() . '" />';
+									echo '</div>';
+									echo '<div class="desc transition">';
+										echo '<p class="large font-medium title l-h-1-2">' . get_the_title() . '</p>';
+										echo '<p class="color-light l-h-1-2" style="font-size: 12px; margin-top: 4px;">';
+											echo get_the_date('F j, Y');
+										echo '</p>';											
+										echo '<div class="flex center-right" style="gap: 8px;">';	
+											echo '<p class="color-light l-h-1" style="font-size: 14px;"><span class="hover-color-primary">Read more</span></p>';
+											echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
+													<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
+												</svg>';
+										echo '</div>';											
 									echo '</div>';
 								echo '</a>';
-							echo '</div>';
-
-							$index++;
-							
+							echo '</div>';							
 						endwhile;
 					echo '</div>';
 					wp_reset_postdata();

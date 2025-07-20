@@ -18,12 +18,10 @@
         </section>
     </section>
 
-    <section id="services-page">
-		<section class="services">
+    <section id="results-page">
+		<section class="results">
 			<section class="container">
-				<div class="container-small">
-					<?php get_all_results(-1); ?>
-				</div>
+				<?php get_all_results(-1); ?>
 			</section>
 		</section>
 	</section>

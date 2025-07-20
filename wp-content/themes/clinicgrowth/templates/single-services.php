@@ -8,7 +8,7 @@
 <?php get_header(); ?>
 
     <section id='common-page'>
-        <section class='landing background-faded'>
+        <section class='landing landing-with-image pos-rel cover-img' style="background-image: url(<?php echo the_post_thumbnail_url(); ?>);">
             <div class='container'>
                 <div class='txt'>
                     <p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Our Services</p>

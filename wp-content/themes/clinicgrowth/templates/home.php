@@ -5,6 +5,10 @@
 	*/
 ?>
 
+	<?php
+		$settings = parse_ini_file("settings.ini", TRUE);
+	?>
+
 	<?php get_header(); ?>
 
 	<h1 style="height: 0; overflow: hidden;">Dental &amp; Aesthetic Clinic Marketing Agency</h1>
@@ -19,7 +23,16 @@
 						<div class="col-1-2">
 							<h1 class="font-bold t-a-l l-h-1-1 mar-0-a title color-secondary">We help private clinics <br/>attract 10–30 new <br/><span class="color-primary">high-value patients</span> <br/>every month.</h1>
 							<h2 class="font-regular subtitle l-h-1-2">Specialist marketing for dentists & aesthetic clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
-							<button class="background-tertiary color-white hover-background-tertiary hover-color-white">Book Your Free Growth Audit</button>
+							<div class="flex">
+								<a
+									class="display-block"
+									href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
+									target="_blank"
+									rel='noreferrer'
+								>
+									<button class="background-tertiary color-white hover-background-tertiary hover-color-white">Book Your Free Growth Audit</button>
+								</a>
+							</div>
 						</div>
 						<div class="col-1-2 right">
 							<div class="of-hid pos-rel">
@@ -168,7 +181,16 @@
 						<p class="l-h-1 small color-primary">Benefits</p>
 						<h3 class="font-bold color-secondary">How We Grow Your Clinic</h3>
 						<p>We help your clinic get seen, generate more patient enquiries, and convert those into bookings.</p>
-						<button class="background-tertiary color-white hover-background-secondary">Book Free Audit</button>
+						<div class="flex btn">
+							<a
+								class="display-block"
+								href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
+								target="_blank"
+								rel='noreferrer'
+							>
+							<button class="background-tertiary color-white hover-background-secondary">Book Free Audit</button>
+						</a>
+					</div>
 					</div>
 					<div class="col-3-5 right">
 						<div class="all">
@@ -253,7 +275,11 @@
 						<p class="l-h-1 small color-primary">Reviews</p>
 						<h3 class="font-bold color-secondary">Our Testimonials</h3>
 						<p>Hear directly from clinic owners who’ve seen real results — more visibility, more patients, and measurable growth.</p>
-						<button class="background-tertiary color-white hover-background-secondary">Contact Us</button>
+						<div class="flex btn">
+							<a href='<?php echo get_site_url(); ?>/contact-us/' class="display-block">
+								<button class="background-tertiary color-white hover-background-secondary">Contact Us</button>
+							</a>
+						</div>
 					</div>
 					<div class="col-3-5 right">
 						<div class="reviews">
