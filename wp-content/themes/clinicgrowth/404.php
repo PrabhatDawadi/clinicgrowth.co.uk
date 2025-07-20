@@ -13,7 +13,7 @@ get_header(); ?>
 		<section class="not-found">
 			<div class="container">
 				<div class="col">
-					<div class="text t-a-c">
+					<div class="txt mar-0-a t-a-c">
 						<h1 class="font-bold color-secondary">ERROR 404</h1>
 						<h5>We can't seem to find the page you are looking for.</h5>
 						<br>

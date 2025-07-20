@@ -42,9 +42,19 @@
 			add_theme_support('menus');
 			add_theme_support('post-thumbnails');
 			register_nav_menu('primary','Header Navigations');
-			register_nav_menu('my-custom-menu','Footer Menu');
+			register_nav_menu('my-custom-menu','Footer Services');
 		}
 		add_action('init', 'custom_theme_setup');
+
+		add_filter('theme_page_templates', function ($post_templates, $theme, $post) {
+			if ($post->post_type === 'services') {
+				$post_templates['single-services.php'] = 'Service Template A';
+			}
+			if ($post->post_type === 'results') {
+				$post_templates['single-results.php'] = 'Result Template A';
+			}
+			return $post_templates;
+		}, 10, 3);
 
 	// =======================================
 	//			3. Custom Title Addition
@@ -75,33 +85,75 @@
 		add_filter('upload_mimes', 'cc_mime_types');
 
 	// =======================================
-	//			Get Experiences
+	//			Get Services Cards
 	// =======================================
 
-		function get_all_experiences($limit='-1') {
-			if (is_plugin_active('our-experiences/index.php')) {
+		define('RANDOM_SVG_ICONS', array(
+			'<svg xmlns="http://www.w3.org/2000/svg" width="524" height="524.001" viewBox="0 0 524 524.001">
+				<g transform="translate(-6362 -2725)">
+					<path d="M524,524H0V0H524V524ZM278.379,2c-4.13,0-8.329.094-12.479.28a268.471,268.471,0,0,0-35.416,3.815,221.788,221.788,0,0,0-33.674,8.659c-22.661,7.846-41.859,19.088-57.061,33.413a150.308,150.308,0,0,0-15.7,17.358,224.043,224.043,0,0,0-13.624,19.711c-8.557,13.777-16.072,28.369-24.027,43.817-6.213,12.066-12.637,24.538-19.6,36.573-6.479,11.2-13.564,22.244-20.416,32.924-9.705,15.128-18.872,29.417-26.521,44.185a195.126,195.126,0,0,0-9.992,22.332,128.137,128.137,0,0,0-6.244,22.891c-3.362,19.983-1.5,42.01,5.537,65.468a228.978,228.978,0,0,0,12.684,32.539,291.277,291.277,0,0,0,17.277,31.026,273.805,273.805,0,0,0,43.933,53.374c17.073,15.855,35.26,27.921,54.054,35.862,14.754,6.234,31.167,10.466,50.177,12.938,15.071,1.96,31.488,2.834,53.229,2.834h.007c8.276,0,16.631-.124,23.813-.24,23.318-.431,44.33-.968,65.361-3.185a316.046,316.046,0,0,0,32.071-4.938,233.92,233.92,0,0,0,31.457-8.831,216.781,216.781,0,0,0,30.537-13.639,208.125,208.125,0,0,0,28.345-18.492,187.07,187.07,0,0,0,24.77-23.061,163.577,163.577,0,0,0,19.81-27.344,169.2,169.2,0,0,0,13.721-31.116,219.121,219.121,0,0,0,8.111-33.933c3.473-21.773,4.353-45.862,2.616-71.6-.8-11.858-2.154-23.8-4.023-35.485-1.857-11.608-4.274-23.3-7.186-34.742-2.891-11.364-6.352-22.81-10.285-34.019-3.9-11.127-8.386-22.336-13.319-33.315C475.7,124.3,463.645,103.18,450.5,85.285A235.942,235.942,0,0,0,427.49,58.28a184.908,184.908,0,0,0-26.737-22.295c-16.834-11.4-36.315-20.1-57.9-25.857A250.288,250.288,0,0,0,278.379,2Z" transform="translate(6362 2725)" fill="#1b00e6"/>
+				</g>
+			</svg>',
+			'<svg xmlns="http://www.w3.org/2000/svg" width="524" height="524.001" viewBox="0 0 524 524.001">
+				<g transform="translate(-7006 -2725)">
+					<path d="M524,524H0V0H524V524ZM214.856,2c-18.1,0-33.308,1.146-46.5,3.5a145.865,145.865,0,0,0-21.1,5.325,105.478,105.478,0,0,0-19.046,8.549A100.16,100.16,0,0,0,115.22,28.4a120.706,120.706,0,0,0-11.693,10.976A173.189,173.189,0,0,0,83.433,65.917C71.252,85.3,61.3,107.46,52.151,128.5c-8.661,19.759-17.712,41.009-25.227,62.522-3.83,10.963-6.989,21.183-9.656,31.242a326.766,326.766,0,0,0-6.861,32.019A273.29,273.29,0,0,0,7.143,287.4,210.194,210.194,0,0,0,8.47,320.353c2.87,23.2,9.928,43.091,20.977,59.121a122.792,122.792,0,0,0,17.228,19.787,197.938,197.938,0,0,0,21.49,17.347c15.481,10.96,32.708,20.752,50.948,31.118,7.34,4.172,14.927,8.484,22.386,12.877,7.232,4.259,14.529,8.706,21.587,13.007l.009.005c17.613,10.734,35.825,21.834,53.874,30.484a215.039,215.039,0,0,0,27.269,11.037,140.086,140.086,0,0,0,27.831,6.091A128.1,128.1,0,0,0,286.2,522c19.266,0,39.947-4.173,61.472-12.4a286.4,286.4,0,0,0,57.892-30.757c20.863-14.157,38.863-29.7,53.5-46.2,15.637-17.621,27.275-36.173,34.591-55.141a165.56,165.56,0,0,0,6.857-22.547,235.569,235.569,0,0,0,4.115-23.424c2.035-15.886,2.843-32.005,3.7-49.071.555-11.074,1.129-22.522,2.07-33.995.733-8.934,1.707-18.094,2.649-26.952v-.007c1.951-18.342,3.968-37.308,3.95-55.3a181.891,181.891,0,0,0-1.78-26.4,118.934,118.934,0,0,0-6.285-24.91,116.088,116.088,0,0,0-15.458-28.133,151.719,151.719,0,0,0-22.834-24.446,192.387,192.387,0,0,0-28.327-20.213,220.812,220.812,0,0,0-31.936-15.435,251.754,251.754,0,0,0-33.854-10.335c-10.886-2.548-22.437-4.616-35.315-6.324C317.231,6.831,292.956,5.455,267.256,4,249.961,3.016,232.077,2,214.856,2Z" transform="translate(7006 2725)" fill="#1b00e6"/>
+				</g>
+			</svg>',
+			'<svg xmlns="http://www.w3.org/2000/svg" width="524" height="524" viewBox="0 0 524 524">
+				<g transform="translate(-7652 -2725)">
+					<path d="M524,524H0V0H524V524ZM177.336,2a124.385,124.385,0,0,0-24.2,2.227,84.488,84.488,0,0,0-35.214,15.5A114.2,114.2,0,0,0,105.973,30,179.727,179.727,0,0,0,84.39,56.146c-6.155,8.877-12.468,19.182-19.3,31.5-6.209,11.2-12.32,23.115-18,34.326-5.695,11.171-11.723,23.131-17.22,34.907-6.034,12.927-10.844,24.375-14.7,35a236.961,236.961,0,0,0-10,34.938,169.7,169.7,0,0,0-2.55,17.4,134.9,134.9,0,0,0,1.119,34.554A168.194,168.194,0,0,0,7.4,295.89a234.969,234.969,0,0,0,12.145,33.864c4.435,10.093,9.865,20.989,16.6,33.31,5.9,10.786,11.958,21.183,18.7,32.684,6.365,10.855,12.61,21.449,19.016,31.709,7.125,11.412,13.58,20.988,19.734,29.277a221.708,221.708,0,0,0,21.387,25.11,148.772,148.772,0,0,0,11.6,10.451,118.853,118.853,0,0,0,12.368,8.759c13.731,8.351,29.82,14,49.186,17.261S227.752,522,243.213,522c4.882,0,10.073-.046,16.832-.148,9.706-.147,21.129-.379,32.261-.976,11.778-.632,22.1-1.606,31.551-2.978a207.319,207.319,0,0,0,30.2-6.528c4.978-1.5,9.822-3.207,14.4-5.08a140.172,140.172,0,0,0,13.822-6.549,156.425,156.425,0,0,0,25.858-17.826A226.635,226.635,0,0,0,431.8,458.608a343.259,343.259,0,0,0,21.843-27.616c6.622-9.236,13.3-19.3,20.415-30.756,7.345-11.8,13.538-22.5,18.933-32.717A322.29,322.29,0,0,0,508.7,333.49a210.1,210.1,0,0,0,10.339-34.728,156.574,156.574,0,0,0,2.485-17.433,133.28,133.28,0,0,0,.337-17.377,141.8,141.8,0,0,0-6.113-34.192,197.4,197.4,0,0,0-13.549-32.951,278.211,278.211,0,0,0-18.758-30.96c-6.438-9.277-13.752-18.771-21.74-28.22-7.379-8.784-15.047-17.191-22.792-24.989-7.621-7.673-15.54-14.983-23.537-21.726-7.86-6.627-16.027-12.9-24.274-18.647-8.094-5.64-16.506-10.94-25-15.753a350.562,350.562,0,0,0-52.808-23.877c-16.464-5.965-35.024-11.6-58.412-17.719-10.682-2.819-24.731-6.383-38.66-8.942A215.348,215.348,0,0,0,177.336,2Z" transform="translate(7652 2725)" fill="#1b00e6"/>
+				</g>
+			</svg>'
+		));
+
+		function get_all_services($limit='-1') {
+			if (is_plugin_active('services/index.php')) {
+
 				$allPosts = new WP_Query(
 					array(
-						'post_type'			=> 'our-experiences', 
+						'post_type'			=> 'services', 
 						'post_status'		=> 'publish', 
 						'posts_per_page'	=> $limit,
 						'order_by'			=> 'menu_order', 
 						'order'				=> 'asc'
 					)
 				);
+
 				if ($allPosts->have_posts()):
-					echo '<div class="row">';
+					echo '<div class="all">';
+						
+						$index = 0;
+
 						while($allPosts->have_posts()):$allPosts->the_post();
-							echo '<div class="col play-video" data-video-url="'.get_post_meta( get_the_ID(), 'videoURL', true ).'">';
-								echo '<img alt="thumb" src="'.get_template_directory_uri().'/images/icons/300x400.svg"/>';
-								echo '<div class="ol"></div>';
-								echo '<video class="bg-video" playsInline="true" controls="false" autoPlay="false" muted="true" loop="true">';
-									echo '<source src="'. get_post_meta( get_the_ID(), 'videoURL', true ). '" type="video/mp4" />';
-								echo '</video>';
-								echo '<div class="icon">';
-									echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Play_1"><path d="M6.562,21.94a2.5,2.5,0,0,1-2.5-2.5V4.56A2.5,2.5,0,0,1,7.978,2.5L18.855,9.939a2.5,2.5,0,0,1,0,4.12L7.977,21.5A2.5,2.5,0,0,1,6.562,21.94Zm0-18.884a1.494,1.494,0,0,0-.7.177,1.477,1.477,0,0,0-.8,1.327V19.439a1.5,1.5,0,0,0,2.35,1.235l10.877-7.44a1.5,1.5,0,0,0,0-2.471L7.413,3.326A1.491,1.491,0,0,0,6.564,3.056Z"></path></g></svg>';
-								echo '</div>';
+							echo '<div class="single">';
+								echo '<a href="'. get_the_permalink() . '">';
+									echo '<div class="flex center-left row">';
+										echo '<div class="img cover-img" style="background-image: url(';
+												echo the_post_thumbnail_url();
+											echo ');">';
+											echo RANDOM_SVG_ICONS[$index % count(RANDOM_SVG_ICONS)];
+											echo '<img src="';
+												echo the_post_thumbnail_url();
+											echo '" alt="' . get_the_title() . '" />';
+										echo '</div>';
+										echo '<div class="desc">';
+											echo '<h5 class="font-medium title l-h-1">' . get_the_title() . '</h5>';
+											echo '<p class="small description color-light">';
+												echo substr(strip_tags(get_the_content()), 0, 480);
+											echo '</p>';
+											echo '<div class="flex center-left" style="gap: 8px;">';
+												echo '<p class="color-light small"><span class="hover-color-primary">Read more</span></p>';
+												echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
+														<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
+													</svg>';
+											echo '</div>';
+										echo '</div>';
+									echo '</div>';
+								echo '</a>';
 							echo '</div>';
+						
+						$index++;
+
 						endwhile;
 					echo '</div>';
 					wp_reset_postdata();
@@ -110,205 +162,53 @@
 			}
 		}
 
-	// =======================================
-	//			Get Menus
-	// =======================================
+		function get_other_services($postId, $limit='-1') {
+			if (is_plugin_active('services/index.php')) {
 
+				$allPosts = new WP_Query(array(
+					'post_type'      => 'services',
+					'post_status'    => 'publish',
+					'posts_per_page' => $limit,
+					'orderby'        => 'menu_order',
+					'order'          => 'asc',
+					'post__not_in'   => array($postId)
+				));
 
-		function get_all_menus($limit='-1') {
-			if (is_plugin_active('our-menus/index.php')) {
-				$allPosts = new WP_Query(
-					array(
-						'post_type'			=> 'our-menus', 
-						'post_status'		=> 'publish', 
-						'posts_per_page'	=> $limit,
-						'order_by'			=> 'menu_order', 
-						'order'				=> 'asc'
-					)
-				);
 				if ($allPosts->have_posts()):
-					echo '<div class="all">';
+					echo '<div class="other-services">';
+						
+						$index = 0;
+
 						while($allPosts->have_posts()):$allPosts->the_post();
 							echo '<div class="one">';
 								echo '<a href="'. get_the_permalink() . '">';
-									echo '<div class="img cover-img" style="background-image: url(';
-											echo the_post_thumbnail_url();
-										echo ');">';
-										echo '<img src=';
-											echo the_post_thumbnail_url();
-										echo '" />';
-									echo '</div>';
-								echo '</a>';
-								echo '<div class="desc">';
-									echo '<div class="i">';
-										echo '<svg xmlns="http://www.w3.org/2000/svg" width="81.06" height="80.134" viewBox="0 0 81.06 80.134">
-												<g transform="translate(-257.709 389.492)">
-													<path d="M277.941-317.758v-16.667H294.8c3.237,0,5.935,2.933,6.609,6.667H286.438a1.776,1.776,0,0,0-1.755,1.733,1.776,1.776,0,0,0,1.755,1.733h33.719c7.148,0,13.353,2.933,14.837,6.667Zm-3.373,4.933H261.081v-26.667h13.487Zm58.268-11.733a25.638,25.638,0,0,0-12.813-3.2H304.781c-.675-5.6-4.991-10-9.981-10H277.941v-3.333a1.775,1.775,0,0,0-1.753-1.733H259.462a1.775,1.775,0,0,0-1.753,1.733v30a1.775,1.775,0,0,0,1.753,1.733h16.86a1.775,1.775,0,0,0,1.753-1.733v-3.333h58.941a1.775,1.775,0,0,0,1.753-1.733c-.135-3.2-2.159-6.267-5.935-8.4" fill="#e84043"/>
-													<path d="M296.554-379.491h3.371a23.466,23.466,0,0,1,23.469,21.733H272.949a23.69,23.69,0,0,1,23.6-21.733Zm1.617-6.667a1.775,1.775,0,0,1,1.753,1.733,1.775,1.775,0,0,1-1.753,1.733,1.775,1.775,0,0,1-1.753-1.733A1.775,1.775,0,0,1,298.171-386.158Zm22.929,38.4H275.242l-4.316-6.667h54.491Zm-58.268-6.667h4.183l5.933,9.2a1.554,1.554,0,0,0,1.484.8H322.18a1.485,1.485,0,0,0,1.348-.8l6.069-9.2h4.181a1.775,1.775,0,0,0,1.753-1.733,1.775,1.775,0,0,0-1.753-1.733h-6.744a26.9,26.9,0,0,0-23.873-24.8,4.982,4.982,0,0,0-.546-4.659,4.982,4.982,0,0,0-4.174-2.141,5.019,5.019,0,0,0-4.151,2.157,5.019,5.019,0,0,0-.57,4.643,26.786,26.786,0,0,0-23.873,24.8H263.1a1.775,1.775,0,0,0-1.753,1.733,1.557,1.557,0,0,0,.364,1.19,1.557,1.557,0,0,0,1.119.543" fill="#e84043"/>
-													<path d="M293.181-374.424c-7.417,0-13.487,8-13.487,13.333a1.774,1.774,0,0,0,1.752,1.733,1.776,1.776,0,0,0,1.755-1.733c0-1.733,1.213-4.4,3.1-6.4,1.215-1.333,3.777-3.6,7.149-3.6a1.775,1.775,0,0,0,1.753-1.733c0-.933-1.079-1.6-2.024-1.6" fill="#e84043"/>
-													<path d="M267.825-317.758a1.774,1.774,0,0,1-1.753-1.733,1.774,1.774,0,0,1,1.753-1.733,1.775,1.775,0,0,1,1.753,1.733,1.775,1.775,0,0,1-1.753,1.733Zm0-6.667a5.1,5.1,0,0,0-5.127,5.067,5.1,5.1,0,0,0,5.127,5.067,5.093,5.093,0,0,0,3.612-1.472,5.093,5.093,0,0,0,1.512-3.6,5.093,5.093,0,0,0-1.512-3.6,5.093,5.093,0,0,0-3.612-1.471" fill="#e84043"/>
-												</g>
-											</svg>';
-									echo '</div>';
-									echo '<div class="t">';
-										echo '<div>';
-											echo '<h6 class="color-white f-w-600 _t">';
-												echo '<span class="flex center-left">';
-													echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Bookmark"><path d="M17.6,21.945a1.483,1.483,0,0,1-1.01-.4l-4.251-3.9a.5.5,0,0,0-.68,0L7.409,21.545a1.5,1.5,0,0,1-2.516-1.1V4.57a2.5,2.5,0,0,1,2.5-2.5h9.214a2.5,2.5,0,0,1,2.5,2.5V20.442a1.481,1.481,0,0,1-.9,1.374A1.507,1.507,0,0,1,17.6,21.945ZM12,16.51a1.5,1.5,0,0,1,1.018.395l4.251,3.9a.5.5,0,0,0,.839-.368V4.57a1.5,1.5,0,0,0-1.5-1.5H7.393a1.5,1.5,0,0,0-1.5,1.5V20.442a.5.5,0,0,0,.839.368L10.983,16.9A1.5,1.5,0,0,1,12,16.51Z"></path></g></svg>';
-													echo '&nbsp;&nbsp;';
-													echo get_the_title();
-												echo '</span>';
-											echo '</h6>';
-											echo '<p class="color-read f-w-300 _d">';
-												echo '<span class="flex center-left">';
-												echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Clock_1"><g><path d="M12,21.933A9.933,9.933,0,1,1,21.933,12,9.944,9.944,0,0,1,12,21.933ZM12,3.067A8.933,8.933,0,1,0,20.933,12,8.943,8.943,0,0,0,12,3.067Z"></path><path d="M11.5,6a.5.5,0,0,1,1,0v4.8c1.13-1.13,2.26-2.27,3.39-3.4a.5.5,0,0,1,.71.71l-4.26,4.25a.463.463,0,0,1-.58.07c-.01-.02-.02-.02-.03-.02a.425.425,0,0,1-.22-.33Z"></path></g></g></svg>';
-													echo '<span>';
-														echo get_post_meta( get_the_ID(), 'TIMING', true );
-													echo '</span>';
-												echo '</span>';
-											echo '</p>';
-										echo '</div>';
-									echo '</div>';
-								echo '</div>';
-								echo '<div class="btn">';
-									echo '<a href="' .get_the_permalink(). '">';
-										echo '<button class="red">';
-											echo '<span>';
-												echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Circle_Chev_Right"><g><path d="M13.85,11.65a.492.492,0,0,1,0,.7l-3,3a.495.495,0,0,1-.7-.7L12.79,12,10.15,9.35a.495.495,0,0,1,.7-.7Z"></path><path d="M12,2.067A9.933,9.933,0,1,1,2.067,12,9.944,9.944,0,0,1,12,2.067Zm0,18.866A8.933,8.933,0,1,0,3.067,12,8.943,8.943,0,0,0,12,20.933Z"></path></g></g></svg>';
-												echo 'Find out more';
-											echo '</span>';
-										echo '</button>';
-									echo '</a>';
-								echo '</div>';
-							echo '</div>';
-						endwhile;
-					echo '</div>';
-					wp_reset_postdata();
-				else :
-				endif;
-			}
-		}
-
-		function get_other_menus($menuName) {			
-			if (is_plugin_active('our-menus/index.php')) {
-				$allPosts = new WP_Query(
-					array(
-						'post_type'			=> 'our-menus', 
-						'post_status'		=> 'publish', 
-						'posts_per_page'	=> -1,
-						'order_by'			=> 'menu_order', 
-						'order'				=> 'desc'
-					)
-				);
-				if ($allPosts->have_posts()):
-					echo '<div class="other-menus">';
-						while($allPosts->have_posts()):$allPosts->the_post();
-							if(get_the_title() != $menuName) {
-								echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-									echo '<div class="m">';
-										echo '<div class="i">';
-											echo '<svg xmlns="http://www.w3.org/2000/svg" width="81.06" height="80.134" viewBox="0 0 81.06 80.134"><g transform="translate(-257.709 389.492)"><path d="M277.941-317.758v-16.667H294.8c3.237,0,5.935,2.933,6.609,6.667H286.438a1.776,1.776,0,0,0-1.755,1.733,1.776,1.776,0,0,0,1.755,1.733h33.719c7.148,0,13.353,2.933,14.837,6.667Zm-3.373,4.933H261.081v-26.667h13.487Zm58.268-11.733a25.638,25.638,0,0,0-12.813-3.2H304.781c-.675-5.6-4.991-10-9.981-10H277.941v-3.333a1.775,1.775,0,0,0-1.753-1.733H259.462a1.775,1.775,0,0,0-1.753,1.733v30a1.775,1.775,0,0,0,1.753,1.733h16.86a1.775,1.775,0,0,0,1.753-1.733v-3.333h58.941a1.775,1.775,0,0,0,1.753-1.733c-.135-3.2-2.159-6.267-5.935-8.4" fill="#e84043"/><path d="M296.554-379.491h3.371a23.466,23.466,0,0,1,23.469,21.733H272.949a23.69,23.69,0,0,1,23.6-21.733Zm1.617-6.667a1.775,1.775,0,0,1,1.753,1.733,1.775,1.775,0,0,1-1.753,1.733,1.775,1.775,0,0,1-1.753-1.733A1.775,1.775,0,0,1,298.171-386.158Zm22.929,38.4H275.242l-4.316-6.667h54.491Zm-58.268-6.667h4.183l5.933,9.2a1.554,1.554,0,0,0,1.484.8H322.18a1.485,1.485,0,0,0,1.348-.8l6.069-9.2h4.181a1.775,1.775,0,0,0,1.753-1.733,1.775,1.775,0,0,0-1.753-1.733h-6.744a26.9,26.9,0,0,0-23.873-24.8,4.982,4.982,0,0,0-.546-4.659,4.982,4.982,0,0,0-4.174-2.141,5.019,5.019,0,0,0-4.151,2.157,5.019,5.019,0,0,0-.57,4.643,26.786,26.786,0,0,0-23.873,24.8H263.1a1.775,1.775,0,0,0-1.753,1.733,1.557,1.557,0,0,0,.364,1.19,1.557,1.557,0,0,0,1.119.543" fill="#e84043"/><path d="M293.181-374.424c-7.417,0-13.487,8-13.487,13.333a1.774,1.774,0,0,0,1.752,1.733,1.776,1.776,0,0,0,1.755-1.733c0-1.733,1.213-4.4,3.1-6.4,1.215-1.333,3.777-3.6,7.149-3.6a1.775,1.775,0,0,0,1.753-1.733c0-.933-1.079-1.6-2.024-1.6" fill="#e84043"/><path d="M267.825-317.758a1.774,1.774,0,0,1-1.753-1.733,1.774,1.774,0,0,1,1.753-1.733,1.775,1.775,0,0,1,1.753,1.733,1.775,1.775,0,0,1-1.753,1.733Zm0-6.667a5.1,5.1,0,0,0-5.127,5.067,5.1,5.1,0,0,0,5.127,5.067,5.093,5.093,0,0,0,3.612-1.472,5.093,5.093,0,0,0,1.512-3.6,5.093,5.093,0,0,0-1.512-3.6,5.093,5.093,0,0,0-3.612-1.471" fill="#e84043"/></g></svg>';
-										echo '</div>';
-										echo '<div class="t">';
-											echo '<div>';
-												echo '<h6 class="color-white f-w-600 _t transition-all-200ms">';
-													echo '<span class="flex center-left">';
-														echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Bookmark"><path d="M17.6,21.945a1.483,1.483,0,0,1-1.01-.4l-4.251-3.9a.5.5,0,0,0-.68,0L7.409,21.545a1.5,1.5,0,0,1-2.516-1.1V4.57a2.5,2.5,0,0,1,2.5-2.5h9.214a2.5,2.5,0,0,1,2.5,2.5V20.442a1.481,1.481,0,0,1-.9,1.374A1.507,1.507,0,0,1,17.6,21.945ZM12,16.51a1.5,1.5,0,0,1,1.018.395l4.251,3.9a.5.5,0,0,0,.839-.368V4.57a1.5,1.5,0,0,0-1.5-1.5H7.393a1.5,1.5,0,0,0-1.5,1.5V20.442a.5.5,0,0,0,.839.368L10.983,16.9A1.5,1.5,0,0,1,12,16.51Z"></path></g></svg>
-														&nbsp;&nbsp;';
-														echo get_the_title();
-													echo '</span>';
-												echo '</h6>';
-												echo '<p class="color-read f-w-300 _d">';
-													echo '<span class="flex center-left">';
-													echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Timer"><g><path d="M2.336,9.685A9.934,9.934,0,0,0,13.592,21.808,9.931,9.931,0,0,0,20.708,7.23,10.046,10.046,0,0,0,12,2.072a.507.507,0,0,0-.5.5v4.2a.5.5,0,0,0,1,0v-4.2l-.5.5a8.935,8.935,0,0,1,8.433,11.892A8.938,8.938,0,0,1,6.468,19.027,9.041,9.041,0,0,1,3.3,9.951c.142-.627-.822-.9-.964-.266Z"></path><path d="M7.4,8.117a.5.5,0,0,1,.707-.707l4.243,4.242h0a.5.5,0,0,1-.707.707Z"></path></g></g></svg>
-														<span>';
-															echo get_post_meta( get_the_ID(), 'TIMING', true );
-														echo '</span>';
-													echo '</span>';
-												echo '</p>';
-											echo '</div>';
-										echo '</div>';
-									echo '</div>';
-								echo '</a>';
-							}
-						endwhile;
-					echo '</div>';
-					wp_reset_postdata();
-				else :
-				endif;
-			}
-		}
-
-	// =======================================
-	//			Get Gallery
-	// =======================================
-
-		function countImgTags($html) {
-			$dom = new DOMDocument();
-			libxml_use_internal_errors(true);
-			$dom->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-			libxml_clear_errors();
-			$imgTags = $dom->getElementsByTagName('img');
-			return $imgTags->length;
-		}
-
-		function get_all_gallery($limit='-1') {
-			if (is_plugin_active('our-gallery/index.php')) {
-				$allPosts = new WP_Query(
-					array(
-						'post_type'			=> 'our-gallery', 
-						'post_status'		=> 'publish', 
-						'posts_per_page'	=> $limit,
-						'order_by'			=> 'menu_order', 
-						'order'				=> 'asc'
-					)
-				);
-				if ($allPosts->have_posts()):
-					echo '<div class="all">';
-						while($allPosts->have_posts()):$allPosts->the_post();
-							echo '<div class="one">';
-								echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-									echo '<div class="img cover-img" style="background-image: url(';
-											echo the_post_thumbnail_url();
-										echo ');">';
-										echo '<div class="cover">';
+									echo '<div class="flex center-left _row">';
+										echo '<div class="_i cover-img" style="background-image: url(';
+												echo the_post_thumbnail_url();
+											echo ');">';
+											echo RANDOM_SVG_ICONS[$index % count(RANDOM_SVG_ICONS)];
 											echo '<img src="';
 												echo the_post_thumbnail_url();
-											echo '" />';
+											echo '" alt="' . get_the_title() . '" />';
 										echo '</div>';
-										echo '<div class="i">';
-											echo '<div class="r">';
-												echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Image_On"><g><path d="M18.435,3.06H5.565a2.5,2.5,0,0,0-2.5,2.5V18.44a2.507,2.507,0,0,0,2.5,2.5h12.87a2.507,2.507,0,0,0,2.5-2.5V5.56A2.5,2.5,0,0,0,18.435,3.06ZM4.065,5.56a1.5,1.5,0,0,1,1.5-1.5h12.87a1.5,1.5,0,0,1,1.5,1.5v8.66l-3.88-3.88a1.509,1.509,0,0,0-2.12,0l-4.56,4.57a.513.513,0,0,1-.71,0l-.56-.56a1.522,1.522,0,0,0-2.12,0l-1.92,1.92Zm15.87,12.88a1.5,1.5,0,0,1-1.5,1.5H5.565a1.5,1.5,0,0,1-1.5-1.5v-.75L6.7,15.06a.5.5,0,0,1,.35-.14.524.524,0,0,1,.36.14l.55.56a1.509,1.509,0,0,0,2.12,0l4.57-4.57a.5.5,0,0,1,.71,0l4.58,4.58Z"></path><path d="M8.062,10.565a2.5,2.5,0,1,1,2.5-2.5A2.5,2.5,0,0,1,8.062,10.565Zm0-4a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,8.062,6.565Z"></path></g></g></svg>';
-												echo '<p class="small">';
-													echo countImgTags(get_the_content());
-													echo " Photos";
-												echo '</p>';
+										echo '<div class="_d">';
+											echo '<p class="large font-medium title l-h-1 _title">' . get_the_title() . '</p>';
+											echo '<p class="small _description color-light">';
+												echo substr(strip_tags(get_the_content()), 0, 480);
+											echo '</p>';
+											echo '<div class="flex center-left" style="gap: 8px;">';
+												echo '<p class="color-light small"><span class="hover-color-primary">Read more</span></p>';
+												echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
+														<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
+													</svg>';
 											echo '</div>';
 										echo '</div>';
 									echo '</div>';
 								echo '</a>';
-								echo '<h6 class="title">';
-									echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-										echo get_the_title();
-									echo '</a>';
-								echo '</h6>';
-								echo '<p class="date">';
-									echo '<span class="flex center-left" style="gap: 4px">';
-										echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Clock_2"><g><path d="M12,21.933A9.933,9.933,0,1,1,21.933,12,9.944,9.944,0,0,1,12,21.933ZM12,3.067A8.933,8.933,0,1,0,20.933,12,8.943,8.943,0,0,0,12,3.067Z"></path><path d="M18,12.5H12a.429.429,0,0,1-.34-.14c-.01,0-.01-.01-.02-.02A.429.429,0,0,1,11.5,12V6a.5.5,0,0,1,1,0v5.5H18A.5.5,0,0,1,18,12.5Z"></path></g></g></svg>';
-										echo get_the_date('F j Y');
-									echo '</span>';
-								echo '</p>';
-								echo '<div class="btn">';
-									echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-										echo '<button>';
-											echo '<span>';
-												echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="Share_1"><g><path d="M12.223,11.075a.5.5,0,0,0,.7.71l7-7v3.58a.508.508,0,0,0,.5.5.5.5,0,0,0,.5-.5V3.575a.5.5,0,0,0-.5-.5h-4.79a.5.5,0,0,0,0,1h3.58Z"></path><path d="M17.876,20.926H6.124a3.053,3.053,0,0,1-3.05-3.05V6.124a3.053,3.053,0,0,1,3.05-3.05h6.028a.5.5,0,0,1,0,1H6.124a2.053,2.053,0,0,0-2.05,2.05V17.876a2.053,2.053,0,0,0,2.05,2.05H17.876a2.053,2.053,0,0,0,2.05-2.05V11.849a.5.5,0,0,1,1,0v6.027A3.053,3.053,0,0,1,17.876,20.926Z"></path></g></g></svg>';
-												echo '&nbsp;Open Album';
-											echo '</span>';
-										echo '</button>';
-									echo '</a>';
-								echo '</div>';
 							echo '</div>';
+
+							$index++;
+							
 						endwhile;
 					echo '</div>';
 					wp_reset_postdata();
@@ -317,81 +217,58 @@
 			}
 		}
 
-		function getImgSrcUrls($html) {
-			$dom = new DOMDocument();
-			libxml_use_internal_errors(true);
-			$dom->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-			libxml_clear_errors();
-			$imgTags = $dom->getElementsByTagName('img');
-			$imgSrcUrls = [];
-			foreach ($imgTags as $imgTag) {
-				$imgSrcUrls[] = $imgTag->getAttribute('src');
-			}
-			return $imgSrcUrls;
-		}
-
-		function get_all_galley_images($html) {
-			$all = getImgSrcUrls($html);
-			echo '<div class="row">';
-			foreach ($all as $single) {
-				echo '<div class="one cover-img" style="background-image: url(' . $single . ')">';
-					echo '<img alt="square" src="'.get_template_directory_uri().'/images/icons/square.svg"/>';
-				echo '</div>';
-			}
-			echo '</div>';
-		}
-
-		function get_all_galley_images_for_slider($html) {
-			$all = getImgSrcUrls($html);
-			echo '<ul class="slides">';
-			foreach ($all as $single) {
-				echo '<li>';
-					echo '<img src="' . $single . '"/>';
-				echo '</li>';
-			}
-			echo '</ul>';
-		}
-
 	// =======================================
-	//			Get FAQs
+	//			Get Results Cards
 	// =======================================
 
-		function get_all_faqs($limit='-1') {
-			if (is_plugin_active('our-faqs/index.php')) {
+		function get_all_results($limit='-1') {
+			if (is_plugin_active('results/index.php')) {
+
 				$allPosts = new WP_Query(
 					array(
-						'post_type'			=> 'our-faqs', 
+						'post_type'			=> 'results', 
 						'post_status'		=> 'publish', 
 						'posts_per_page'	=> $limit,
 						'order_by'			=> 'menu_order', 
 						'order'				=> 'asc'
 					)
 				);
+
 				if ($allPosts->have_posts()):
 					echo '<div class="all">';
+						
+						$index = 0;
+
 						while($allPosts->have_posts()):$allPosts->the_post();
-							echo '<div class="one">';
-								echo '<div class="title">';
-									echo '<h6 class="f-w-400 t">';
-										echo get_the_title();
-									echo '</h6>';
-									echo '<div class="arr">';
-										echo '<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="33.368"
-												height="20.233"
-												viewBox="0 0 33.368 20.233">
-												<path
-													d="M15.458,19.868a1.8,1.8,0,0,0,2.516,0L32.883,5.048a1.893,1.893,0,0,0,0-2.6L31.13.664a1.893,1.893,0,0,0-2.6,0L16.758,12.438,4.905.664a1.893,1.893,0,0,0-2.6,0L.549,2.423a1.893,1.893,0,0,0,0,2.6Z"
-													transform="translate(-0.032 -0.147)"
-												/>
-											</svg>';
+							echo '<div class="single">';
+								echo '<a href="'. get_the_permalink() . '">';
+									echo '<div class="flex center-left row">';
+										echo '<div class="img cover-img" style="background-image: url(';
+												echo the_post_thumbnail_url();
+											echo ');">';
+											echo RANDOM_SVG_ICONS[$index % count(RANDOM_SVG_ICONS)];
+											echo '<img src="';
+												echo the_post_thumbnail_url();
+											echo '" alt="' . get_the_title() . '" />';
+										echo '</div>';
+										echo '<div class="desc">';
+											echo '<h5 class="font-medium title l-h-1">' . get_the_title() . '</h5>';
+											echo '<p class="small description color-light">';
+												echo substr(strip_tags(get_the_content()), 0, 480);
+											echo '</p>';
+											echo '<div class="flex center-left" style="gap: 8px;">';
+												echo '<p class="color-light small"><span class="hover-color-primary">Read more</span></p>';
+												echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
+														<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
+													</svg>';
+											echo '</div>';
+										echo '</div>';
 									echo '</div>';
-								echo '</div>';
-								echo '<div class="con">';
-									echo get_the_content();
-								echo '</div>';
+								echo '</a>';
 							echo '</div>';
+						
+						$index++;
+
 						endwhile;
 					echo '</div>';
 					wp_reset_postdata();
@@ -400,164 +277,66 @@
 			}
 		}
 
-	// =======================================
-	//			Get Whats On
-	// =======================================
+		function get_other_results($postId, $limit='-1') {
+			if (is_plugin_active('results/index.php')) {
 
-		function get_posts_categories($active='') {
-			$categories = get_categories();
-			foreach($categories as $category) {
-				echo '<li ';
-					if($category->slug === $active) {
-						echo 'class="active" ';
-					}
-				echo '>';
-				echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
-			}
-		}
+				$allPosts = new WP_Query(array(
+					'post_type'      => 'results',
+					'post_status'    => 'publish',
+					'posts_per_page' => $limit,
+					'orderby'        => 'menu_order',
+					'order'          => 'asc',
+					'post__not_in'   => array($postId)
+				));
 
-		function get_whats_on($limit='-1') {
-			$allPosts = new WP_Query(
-				array(
-					'post_type'			=> 'post', 
-					'post_status'		=> 'publish', 
-					'posts_per_page'	=> 6,
-					'order_by'			=> 'menu_order', 
-					'order'				=> 'asc'
-				)
-			);
-			if ($allPosts->have_posts()):
-				echo '<div class="all">';
-					while($allPosts->have_posts()):$allPosts->the_post();
-						echo '<div class="one">';
-							echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-								echo '<div class="img cover-img" style="background-image: url(';
-									echo the_post_thumbnail_url();
-									echo ');">';
-									echo '<img src="';
-										echo the_post_thumbnail_url();
-									echo '" alt="' . get_the_title() . '" />';
-								echo '</div>';
-							echo '</a>';
-							echo '<div class="desc">';
-								get_categories_of_a_post(get_the_ID());
-								echo '<h4 class="title">';
-									echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-										echo get_the_title();
-									echo '</a>';
-								echo '</h4>';
-								echo '<div class="con">';
-									echo '<p>'. substr(strip_tags(get_the_content()), 0, 148) .'...	</p>';
-								echo '</div>';
-								echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-									echo '<button>';
-										echo '<span>';
-											echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="read"><g><path d="M12,18.883a10.8,10.8,0,0,1-9.675-5.728,2.6,2.6,0,0,1,0-2.31A10.8,10.8,0,0,1,12,5.117a10.8,10.8,0,0,1,9.675,5.728h0a2.6,2.6,0,0,1,0,2.31A10.8,10.8,0,0,1,12,18.883ZM12,6.117a9.787,9.787,0,0,0-8.78,5.176,1.586,1.586,0,0,0,0,1.415A9.788,9.788,0,0,0,12,17.883a9.787,9.787,0,0,0,8.78-5.176,1.584,1.584,0,0,0,0-1.414h0A9.787,9.787,0,0,0,12,6.117Z"></path><path d="M12,16.049A4.049,4.049,0,1,1,16.049,12,4.054,4.054,0,0,1,12,16.049Zm0-7.1A3.049,3.049,0,1,0,15.049,12,3.052,3.052,0,0,0,12,8.951Z"></path><circle cx="12" cy="12" r="2.028"></circle></g></g></svg>';
-											echo '&nbsp;Read More';
-										echo '</span>';
-									echo '</button>';
+				if ($allPosts->have_posts()):
+					echo '<div class="other-services">';
+						
+						$index = 0;
+
+						while($allPosts->have_posts()):$allPosts->the_post();
+							echo '<div class="one">';
+								echo '<a href="'. get_the_permalink() . '">';
+									echo '<div class="flex center-left _row">';
+										echo '<div class="_i cover-img" style="background-image: url(';
+												echo the_post_thumbnail_url();
+											echo ');">';
+											echo RANDOM_SVG_ICONS[$index % count(RANDOM_SVG_ICONS)];
+											echo '<img src="';
+												echo the_post_thumbnail_url();
+											echo '" alt="' . get_the_title() . '" />';
+										echo '</div>';
+										echo '<div class="_d">';
+											echo '<p class="large font-medium title l-h-1 _title">' . get_the_title() . '</p>';
+											echo '<p class="small _description color-light">';
+												echo substr(strip_tags(get_the_content()), 0, 480);
+											echo '</p>';
+											echo '<div class="flex center-left" style="gap: 8px;">';
+												echo '<p class="color-light small"><span class="hover-color-primary">Read more</span></p>';
+												echo '<svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="12" viewBox="0 0 12.001 12" class="width-auto display-block color-primary-path" style="height: 8px;">
+														<path d="M-333-190v-7.586l-8.293,8.293A1,1,0,0,1-342-189a1,1,0,0,1-.707-.293,1,1,0,0,1,0-1.415l8.293-8.293H-342a1,1,0,0,1-1-1,1,1,0,0,1,1-1h9.971a1,1,0,0,1,.736.293,1,1,0,0,1,.292.736V-190a1,1,0,0,1-1,1A1,1,0,0,1-333-190Z" transform="translate(343 201)"/>
+													</svg>';
+											echo '</div>';
+										echo '</div>';
+									echo '</div>';
 								echo '</a>';
 							echo '</div>';
-						echo '</div>';
-					endwhile;
-				echo '</div>';
-				echo '<ul class="pagination">';
-						$big = 999999999;
-						echo paginate_links( array(
-							'base' 			=> str_replace($big, '%#%', get_pagenum_link($big)),
-							'format' 		=> '?paged=%#%',
-							'current' 		=> max(1, get_query_var('paged')),
-							'total' 		=> $allPosts->max_num_pages,
-							'prev_text' 	=> '&laquo;',
-							'next_text' 	=> '&raquo;'
-						));
-					echo '</ul>';
-				wp_reset_postdata();
-			else :
-			endif;
-		}
 
-		function get_category_details($slug) {
-			$category = get_category_by_slug($slug);
-			if ($category) {
-				return $category;
-			} else {
-				return false;
+							$index++;
+							
+						endwhile;
+					echo '</div>';
+					wp_reset_postdata();
+				else :
+				endif;
 			}
 		}
 
-		function get_whats_on_by_category($category_slug) {
-			$allPosts = new WP_Query(
-				array(
-					'post_type'			=> 'post', 
-					'post_status'		=> 'publish', 
-					'posts_per_page'	=> -1,
-					'order_by'			=> 'menu_order', 
-					'order'				=> 'asc',
-					'category_name' 	=> $category_slug,
-				)
-			);
-			if ($allPosts->have_posts()):
-				echo '<div class="all">';
-					while($allPosts->have_posts()):$allPosts->the_post();
-						echo '<div class="one">';
-							echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-								echo '<div class="img cover-img" style="background-image: url(';
-									echo the_post_thumbnail_url();
-									echo ');">';
-									echo '<img src="';
-										echo the_post_thumbnail_url();
-									echo '" alt="' . get_the_title() . '" />';
-								echo '</div>';
-							echo '</a>';
-							echo '<div class="desc">';
-								echo '<ul><li><a href="#">Events</a><li><li><a href="#">News</a><li></ul>';
-								echo '<h4 class="title">';
-									echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-										echo get_the_title();
-									echo '</a>';
-								echo '</h4>';
-								echo '<div class="con">';
-									echo '<p>'. substr(strip_tags(get_the_content()), 0, 148) .'...	</p>';
-								echo '</div>';
-								echo '<a href="'. get_the_permalink() . '" title="' . get_the_title() . '">';
-									echo '<button>';
-										echo '<span>';
-											echo '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g id="read"><g><path d="M12,18.883a10.8,10.8,0,0,1-9.675-5.728,2.6,2.6,0,0,1,0-2.31A10.8,10.8,0,0,1,12,5.117a10.8,10.8,0,0,1,9.675,5.728h0a2.6,2.6,0,0,1,0,2.31A10.8,10.8,0,0,1,12,18.883ZM12,6.117a9.787,9.787,0,0,0-8.78,5.176,1.586,1.586,0,0,0,0,1.415A9.788,9.788,0,0,0,12,17.883a9.787,9.787,0,0,0,8.78-5.176,1.584,1.584,0,0,0,0-1.414h0A9.787,9.787,0,0,0,12,6.117Z"></path><path d="M12,16.049A4.049,4.049,0,1,1,16.049,12,4.054,4.054,0,0,1,12,16.049Zm0-7.1A3.049,3.049,0,1,0,15.049,12,3.052,3.052,0,0,0,12,8.951Z"></path><circle cx="12" cy="12" r="2.028"></circle></g></g></svg>';
-											echo '&nbsp;Read More';
-										echo '</span>';
-									echo '</button>';
-								echo '</a>';
-							echo '</div>';
-						echo '</div>';
-					endwhile;
-				echo '</div>';
-				// echo '<ul class="pagination">';
-				// 		$big = 999999999;
-				// 		echo paginate_links( array(
-				// 			'base' 			=> str_replace($big, '%#%', get_pagenum_link($big)),
-				// 			'format' 		=> '?paged=%#%',
-				// 			'current' 		=> max(1, get_query_var('paged')),
-				// 			'total' 		=> $allPosts->max_num_pages,
-				// 			'prev_text' 	=> '&laquo;',
-				// 			'next_text' 	=> '&raquo;'
-				// 		));
-				// 	echo '</ul>';
-				wp_reset_postdata();
-			else :
-			endif;
-		}
+	
 
-		function get_categories_of_a_post($postId) {
-			$categories = get_the_category($postId);
-			if (!empty($categories)) {
-				echo '<ul>';
-				foreach ($categories as $category) {
-					echo '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a></li>';
-				}
-				echo '</ul>';
-			}
-		}
+
+	
+
 
 	// =======================================
 	//			END OF FUNCTIONS

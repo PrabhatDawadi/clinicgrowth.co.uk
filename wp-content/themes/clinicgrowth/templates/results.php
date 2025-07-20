@@ -8,42 +8,46 @@ Template Post Type: page
 
     <!-- Landing -->
 
-	<section id="results-page">
-		<section class="hero">
-			<section class="container">
-				<h1>Clinic Marketing Results: Real Growth for Real Clinics</h1>
-			</section>
-		</section>
-	</section>
+	<section id='common-page'>
+        <section class='landing background-faded'>
+            <div class='container'>
+                <div class='txt'>
+                    <p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Growth Results</p>
+                    <h2 class='title color-secondary font-bold l-h-1-1'>Clinic Marketing Results: Real Growth for Real Clinics</h2>
+                </div>
+            </div>
+        </section>
+    </section>
 
-    <!-- Paid Ads -->
-
-	<section id="services-page">
+    <section id="services-page">
 		<section class="services">
 			<section class="container">
-                <h3>Case Studies:</h3>
-                <br/>
-                <div class="service">
-				    <h4>Invisalign & Cosmetic Dentistry</h4>
-				    <p>...</p>
-                    <br/>
-                </div>
-                <div class="service">
-				    <h4>Facial Aesthetics & Skin Boosters</h4>
-				    <p>...</p>
-                    <br/>
-                </div>
-                <div class="service">
-				    <h4>Medspa Monthly Growth</h4>
-				    <p>...</p>
-                    <p>(even placeholders or 2–3 examples to start — builds trust)</p>
-                    <br/>
-                </div>
+				<div class="container-small">
+					<?php get_all_results(-1); ?>
+				</div>
 			</section>
 		</section>
 	</section>
 
 <?php get_footer();?>
+
+
+<!-- <div class="service">
+    <h4>Invisalign & Cosmetic Dentistry</h4>
+    <p>...</p>
+    <br/>
+</div>
+<div class="service">
+    <h4>Facial Aesthetics & Skin Boosters</h4>
+    <p>...</p>
+    <br/>
+</div>
+<div class="service">
+    <h4>Medspa Monthly Growth</h4>
+    <p>...</p>
+    <p>(even placeholders or 2–3 examples to start — builds trust)</p>
+    <br/>
+</div> -->
 
 
 

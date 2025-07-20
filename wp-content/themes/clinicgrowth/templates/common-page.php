@@ -11,7 +11,7 @@ Template Post Type: page, post
         <section class='landing background-faded'>
             <div class='container'>
                 <div class='txt'>
-                    <h2 class='title color-secondary font-bold'><?php the_title();?></h2>
+                    <h2 class='title color-secondary font-bold l-h-1-1'><?php the_title();?></h2>
                 </div>
             </div>
         </section>
@@ -19,9 +19,13 @@ Template Post Type: page, post
 	
 	<section id='common-content'>
 		<div class='container'>
-			<div class='inner'>
-			<?php the_content(); ?>
-			</div>
+            <div class='container-medium'>
+                <div class='container-small'>
+                    <div class='inner'>
+                        <?php the_content(); ?>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</section>
 

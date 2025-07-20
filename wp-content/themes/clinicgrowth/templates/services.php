@@ -1,51 +1,28 @@
 <?php
-/*
-Template Name: Services
-Template Post Type: page
-*/
+	/*
+		Template Name: Services
+		Template Post Type: page
+	*/
 ?>
 <?php get_header(); ?>
 
-    <!-- Landing -->
-
-	<section id="services-page">
-		<section class="hero">
-			<section class="container">
-				<h1>Our Marketing Services for Private Clinics</h1>
-			</section>
-		</section>
-	</section>
-
-    <!-- Paid Ads -->
+	<section id='common-page'>
+        <section class='landing background-faded'>
+            <div class='container'>
+                <div class='txt'>
+					<p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Our Services</p>
+                    <h2 class='title color-secondary font-bold l-h-1-1'>Our Marketing Services for Private Clinics</h2>
+                </div>
+            </div>
+        </section>
+    </section>
 
 	<section id="services-page">
 		<section class="services">
 			<section class="container">
-                <div class="service">
-				    <h4>Paid Ads</h4>
-				    <p>(Meta & Google)</p>
-                    <br/>
-                </div>
-                <div class="service">
-				    <h4>Social Media Content</h4>
-				    <p>Video & Photo</p>
-                    <br/>
-                </div>
-                <div class="service">
-				    <h4>CRM & Automation</h4>
-				    <p>(lead follow-up)</p>
-                    <br/>
-                </div>
-                <div class="service">
-				    <h4>Landing Pages & Funnels</h4>
-				    <p>...</p>
-                    <br/>
-                </div>
-                <div class="service">
-				    <h4>Reporting & Growth Optimisation</h4>
-				    <p>...</p>
-                    <br/>
-                </div>
+				<div class="container-small">
+					<?php get_all_services(-1); ?>
+				</div>
 			</section>
 		</section>
 	</section>

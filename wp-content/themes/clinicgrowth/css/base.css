@@ -175,11 +175,28 @@ a {
   background-color: #eaf3ff;
 }
 
+.color-light {
+  color: #404041;
+}
+
 /* ====================================
 	Layouts
 ==================================== */
 .container {
   max-width: 1320px;
+}
+
+.container-medium {
+  max-width: 1248px;
+}
+
+.container-small {
+  max-width: 1080px;
+}
+
+.container,
+.container-medium,
+.container-small {
   margin: 0 auto;
 }
 
@@ -187,7 +204,7 @@ a {
 	Custom Classes 
 ==================================== */
 .cover-img {
-  background: url(../images/icons//default.jpg) no-repeat center center;
+  background: url(../images/icons//default-image.jpg) no-repeat center center;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -714,6 +731,19 @@ footer .top .row .col ._link {
   padding: 6px 0;
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.52);
+}
+footer .top .row .col ul li {
+  list-style: none;
+  padding: 6px 0;
+  line-height: 1.2;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.52);
+}
+footer .top .row .col ul li a {
+  transition: all 0.2s;
+}
+footer .top .row .col ul li a:hover {
+  color: #2f80ed;
 }
 footer .bottom {
   background-color: rgba(0, 0, 0, 0.32);

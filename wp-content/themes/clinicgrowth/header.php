@@ -1,16 +1,20 @@
+<?php
+	$settings = parse_ini_file("settings.ini", TRUE);
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<title><?php wp_title('|', true, 'right'); ?></title>
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="copyright" content="https://clinicgrowth.co.uk" />
+		<meta name="copyright" content="<?php echo $settings['website']['MAIN_DOMAIN']; ?>" />
 		<meta name="description" content="We help private clinics attract 10–30 new high-value patients every month. Specialist dental & aesthetic clinic marketing: Paid Ads, Content & CRM Systems." />
 		<meta name="keywords" content="Clinic marketing agency, Dental marketing UK, Aesthetic clinic marketing London”, Private dentist marketing agency, Paid ads for aesthetic clinics" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
-		<meta name="author" content="clinicgrowth.co.uk"/>
-		<link rel="author" href="https://clinicgrowth.co.uk" />
-		<link rel="publisher" href="https://clinicgrowth.co.uk/" />
+		<meta name="author" content="<?php echo $settings['website']['MAIN_DOMAIN']; ?>"/>
+		<link rel="author" href="<?php echo $settings['website']['MAIN_DOMAIN']; ?>" />
+		<link rel="publisher" href="<?php echo $settings['website']['MAIN_DOMAIN']; ?>" />
 		<?php $settings = parse_ini_file("settings.ini", TRUE); ?>
 
 		<link rel='stylesheet' href='<?php bloginfo('template_directory'); ?>/css/fonts.css?ver=<?php echo $settings['design']['CSS_VERSION']; ?>' type='text/css' media='all'/>
@@ -30,6 +34,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory'); ?>/images/favicons/48x48.ico">
 		<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory'); ?>/images/favicons/32x32.ico">        
         <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory'); ?>/images/favicons/16x16.ico">
+		
 		<?php wp_head(); ?>	
 	</head>
 	<body>
@@ -75,7 +80,7 @@
 										);
 									?>
 								</nav>
-							<?php endif; ?>		
+							<?php endif; ?>
 						</div>
 						<div class="col-1-4 mar-l-a flex center-right">
 							<button class="background-primary color-white hover-background-secondary hover-color-white">Contact Us</button>

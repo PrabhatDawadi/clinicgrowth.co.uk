@@ -1,14 +1,15 @@
 <?php
-/*
-Template Name: Home
-Template Post Type: post, page
-*/
+	/*
+		Template Name: Home
+		Template Post Type: post, page
+	*/
 ?>
-<?php get_header(); ?>
+
+	<?php get_header(); ?>
+
+	<h1 style="height: 0; overflow: hidden;">Dental &amp; Aesthetic Clinic Marketing Agency</h1>
 
 	<!-- Hero Landing -->
-	
-	<h1 style="height: 0; overflow: hidden;">Dental &amp; Aesthetic Clinic Marketing Agency</h1>
 	
 	<section id="home-page">
 		<section class="hero background-faded">
@@ -110,7 +111,6 @@ Template Post Type: post, page
   								<path d="M118,172.009c14.71,0,42.12,0,73.06-18.491s41.11-41.85,44.419-54.14a13.99,13.99,0,0,0,.5-3.7,13.99,13.99,0,0,1-.5,3.7c-3.309,12.29-13.479,35.65-44.419,54.14S132.708,172.009,118,172.009Zm-73.08-18.491C14,135.009,3.808,111.668.5,99.389a14,14,0,0,1,1.4-10.74,13.557,13.557,0,0,1,8.3-6.4l.346-.087.164-.041.221-.054.572-.137.241-.057a72.616,72.616,0,0,1,16.4-1.887H28.2q2.985,0,5.971.247l.193.016a95.19,95.19,0,0,1-2.4-21.045,95.19,95.19,0,0,0,2.4,21.045,95.19,95.19,0,0,1-2.4-21.045,82.629,82.629,0,0,1,3.853-25.354l.022-.07q.043-.133.089-.265a14.153,14.153,0,0,1,13.328-9.526H49.3a14.175,14.175,0,0,1,2.859.294l.128.027a84.167,84.167,0,0,1,29.77,13.109,92.7,92.7,0,0,1,27.509-34.6,14,14,0,0,1,16.851,0,92.6,92.6,0,0,1,27.519,34.6A84.224,84.224,0,0,1,183.7,24.309l.13-.027.076-.016.117-.023a14.168,14.168,0,0,1,2.669-.256h.045a14.16,14.16,0,0,1,13.354,9.581l.027.079c.021.064.042.128.063.192a82.629,82.629,0,0,1,3.853,25.354,95.19,95.19,0,0,1-2.4,21.045,95.19,95.19,0,0,0,2.4-21.045,95.19,95.19,0,0,1-2.4,21.045q.361-.031.722-.058,2.719-.2,5.441-.205h.063A72.646,72.646,0,0,1,224.4,81.895l.046.011.251.06.319.077.129.032q.328.081.657.165a13.561,13.561,0,0,1,8.3,6.4,13.995,13.995,0,0,1,1.38,10.74c-3.309,12.29-13.479,35.65-44.419,54.14S132.708,172.009,118,172.009,75.839,172.029,44.918,153.518Zm73.08,5.35c8.81-6.19,34-27.92,34-73.69,0-43.36-22.94-65.34-32.8-72.78a2,2,0,0,0-2.4,0c-9.86,7.44-32.8,29.42-32.8,72.78C84,130.669,109.319,152.669,118,158.869Zm-29.57-1.14a141.006,141.006,0,0,1-41-44.72A126.263,126.263,0,0,1,38,92.729a126.263,126.263,0,0,0,9.43,20.28,141.006,141.006,0,0,0,41,44.72Zm0,0a141.006,141.006,0,0,1-41-44.72A126.263,126.263,0,0,1,38,92.729c-.218-.035-.437-.068-.655-.1l-.186-.027-.079-.011a62.15,62.15,0,0,0-8.775-.626h-.059A62.14,62.14,0,0,0,13.712,93.7l-.423.1a1.712,1.712,0,0,0-1,.8,2.083,2.083,0,0,0-.256,1.4,2.076,2.076,0,0,1-.03-.363,2.077,2.077,0,0,0,.076.568c.406,1.508.935,3.211,1.621,5.068,4.128,11.169,13.971,27.948,37.379,41.932a114.809,114.809,0,0,0,33.037,13.58Q86.261,157.3,88.428,157.729Zm109.57-65a126.367,126.367,0,0,1-9.48,20.27,141,141,0,0,1-41,44.72,141,141,0,0,0,41-44.72A126.367,126.367,0,0,0,198,92.729Zm0,0a126.367,126.367,0,0,1-9.48,20.27,141,141,0,0,1-41,44.72,114.822,114.822,0,0,0,37.38-14.47c27.3-16.349,36.15-36.46,39-47h.02a2.084,2.084,0,0,0-.19-1.61,1.71,1.71,0,0,0-1-.8A62.167,62.167,0,0,0,198,92.729Zm-146.92,50.48a114.823,114.823,0,0,0,33.038,13.58,114.809,114.809,0,0,1-33.037-13.58C27.67,129.225,17.827,112.446,13.7,101.277,17.827,112.446,27.67,129.225,51.078,143.209ZM164,85.179c0,23.76-6.15,41.83-13.83,55.2,7.681-13.369,13.83-31.44,13.83-55.2q0-.433,0-.865,0,.433,0,.865c0,23.76-6.15,41.83-13.83,55.2a129.743,129.743,0,0,0,28-33.369c10.709-18.625,13.874-34.974,13.872-47.8a70.922,70.922,0,0,0-3.283-21.7,2.2,2.2,0,0,0-2.54-1.5,73.1,73.1,0,0,0-27.74,12.9A116.124,116.124,0,0,1,164,84.314Q164,84.746,164,85.179Zm-78.19,55.17C78.148,127.029,72,108.939,72,85.179q0-.433,0-.865a116.124,116.124,0,0,1,5.523-35.4,73.1,73.1,0,0,0-27.74-12.9,73.1,73.1,0,0,1,27.74,12.9,73.1,73.1,0,0,0-27.74-12.9,2.207,2.207,0,0,0-.42-.043h-.013l-.112,0,.089,0a2.2,2.2,0,0,0-2,1.349l0,.012a2.219,2.219,0,0,0-.075.212,70.733,70.733,0,0,0-3.284,21.678c0,12.813,3.156,29.154,13.854,47.762a129.579,129.579,0,0,0,28,33.37C78.148,127.029,72,108.939,72,85.179q0-.433,0-.865,0,.433,0,.865c0,23.76,6.15,41.85,13.81,55.17Zm136.921-46.51a1.71,1.71,0,0,1,1,.8A2.082,2.082,0,0,1,224,95.657a2.082,2.082,0,0,0-.272-1.018,1.71,1.71,0,0,0-1-.8,62.153,62.153,0,0,0-7.358-1.377A62.247,62.247,0,0,1,222.728,93.839ZM119.2,12.4c9.86,7.44,32.8,29.42,32.8,72.78,0-43.36-22.94-65.34-32.8-72.78a2,2,0,0,0-2.4,0c-9.86,7.44-32.8,29.42-32.8,72.78,0-43.36,22.94-65.34,32.8-72.78a2,2,0,0,1,2.4,0ZM47.238,37.539a70.733,70.733,0,0,0-3.284,21.678,70.733,70.733,0,0,1,3.284-21.678Zm141.52-.031a70.922,70.922,0,0,1,3.283,21.7,70.922,70.922,0,0,0-3.283-21.7Zm-2.54-1.5a73.1,73.1,0,0,0-27.74,12.9,73.1,73.1,0,0,1,27.74-12.9ZM45.1,153.627c30.846,18.4,58.218,18.382,72.9,18.382C103.317,172.009,75.946,172.029,45.1,153.627Zm-.181-.108C14,135.009,3.808,111.668.5,99.389a13.994,13.994,0,0,1-.5-3.7,13.994,13.994,0,0,0,.5,3.7c3.31,12.28,13.5,35.62,44.42,54.13l.181.108ZM12.289,94.6a1.707,1.707,0,0,1,1-.8,1.707,1.707,0,0,0-1,.8A2.081,2.081,0,0,0,12,95.641,2.081,2.081,0,0,1,12.289,94.6Zm1.423-.9-.423.1ZM37.157,92.6l.186.027ZM28.3,91.964a62.15,62.15,0,0,1,8.775.626A62.172,62.172,0,0,0,28.3,91.964Zm-.025,0h0ZM47.318,37.315l0,.012Zm2.04-1.349a2.207,2.207,0,0,1,.42.043A2.21,2.21,0,0,0,49.358,35.966Zm-.013,0h0Z" transform="translate(0)"/>
 							</svg>
 						</div>
-
 					</div>
 				</div>
 				<div class="all flex">
@@ -124,8 +124,8 @@ Template Post Type: post, page
 								</svg>
 							</div>
 						</div>
-						<p class="large font-medium title t-a-c"><a class="hover-color-primary transition" href="#">Private Dentists</a></p>
-						<p class="small description t-a-c">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
+						<p class="large font-medium title t-a-c">Private Dentists</a></p>
+						<p class="small description t-a-c color-light">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
 					</div>
 					<div class="col-1-3 one">
 						<div class="img">
@@ -137,8 +137,8 @@ Template Post Type: post, page
 								</svg>
 							</div>
 						</div>
-						<p class="large font-medium title t-a-c"><a class="hover-color-primary transition" href="#">Aesthetic Clinics</a></p>
-						<p class="small description t-a-c">At our agency, our digital marketing team are experts in the Aesthetics market and work closely with you to create the best strategy to maximise the impact your digital marketing has on your Aesthetic clinic.</p>
+						<p class="large font-medium title t-a-c">Aesthetic Clinics</a></p>
+						<p class="small description t-a-c color-light">At our agency, our digital marketing team are experts in the Aesthetics market and work closely with you to create the best strategy to maximise the impact your digital marketing has on your Aesthetic clinic.</p>
 					</div>
 					<div class="col-1-3 one">
 						<div class="img">
@@ -150,8 +150,8 @@ Template Post Type: post, page
 								</svg>
 							</div>
 						</div>
-						<p class="large font-medium title t-a-c"><a class="hover-color-primary transition" href="#">MedSpas</a></p>
-						<p class="small description t-a-c">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
+						<p class="large font-medium title t-a-c">MedSpas</a></p>
+						<p class="small description t-a-c color-light">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
 					</div>
 				</div>
 			</div>
@@ -180,7 +180,7 @@ Template Post Type: post, page
 								</div>
 								<div class="flex-1 desc">
 									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">Higher Visibility</p>
-									<p class="small">We design and optimise your website for maximum reach through SEO and targeted advertising, so your clinic gets seen by the right people.</p>
+									<p class="small color-light">We design and optimise your website for maximum reach through SEO and targeted advertising, so your clinic gets seen by the right people.</p>
 								</div>
 							</div>
 							<div class="one flex center-left">
@@ -191,7 +191,7 @@ Template Post Type: post, page
 								</div>
 								<div class="flex-1 desc">
 									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">More Enquiries</p>
-									<p class="small">Our high-converting landing pages, clear messaging, and powerful calls-to-action are crafted to turn visitors into patient enquiries.</p>
+									<p class="small color-light">Our high-converting landing pages, clear messaging, and powerful calls-to-action are crafted to turn visitors into patient enquiries.</p>
 								</div>
 							</div>
 							<div class="one flex center-left">
@@ -202,7 +202,7 @@ Template Post Type: post, page
 								</div>
 								<div class="flex-1 desc">
 									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">More Bookings</p>
-									<p class="small">With proven strategies in CRM, follow-ups, and user experience, we help you turn more enquiries into confirmed appointments.</p>
+									<p class="small color-light">With proven strategies in CRM, follow-ups, and user experience, we help you turn more enquiries into confirmed appointments.</p>
 								</div>
 							</div>
 						</div>
@@ -226,17 +226,17 @@ Template Post Type: post, page
 					<div class="col-1-3 one">						
 						<img class="width-auto display-block mar-0-a" alt="audit" src="<?php bloginfo('template_directory'); ?>/images/home/audit.png" />
 						<p class="l-h-1 large font-medium title t-a-c">1. Audit</p>
-						<p class="description small t-a-c">We start with a deep dive into your clinic’s digital presence — analysing your website, branding, SEO, and marketing strategy to uncover growth opportunities.</p>
+						<p class="description small t-a-c color-light">We start with a deep dive into your clinic’s digital presence — analysing your website, branding, SEO, and marketing strategy to uncover growth opportunities.</p>
 					</div>
 					<div class="col-1-3 one">						
 						<img class="width-auto display-block mar-0-a" alt="launch" src="<?php bloginfo('template_directory'); ?>/images/home/launch.png" />
 						<p class="l-h-1 large font-medium title t-a-c">2. Launch</p>
-						<p class="description small t-a-c">Our team designs and launches a tailored solution — from website improvements to targeted campaigns — built to attract and convert the right patients.</p>
+						<p class="description small t-a-c color-light">Our team designs and launches a tailored solution — from website improvements to targeted campaigns — built to attract and convert the right patients.</p>
 					</div>
 					<div class="col-1-3 one">						
 						<img class="width-auto display-block mar-0-a" alt="growth" src="<?php bloginfo('template_directory'); ?>/images/home/growth.png" />
 						<p class="l-h-1 large font-medium title t-a-c">3. Growth</p>
-						<p class="description small t-a-c">With everything live, we continually optimise your results — increasing visibility, boosting enquiries, and driving long-term patient growth.</p>
+						<p class="description small t-a-c color-light">With everything live, we continually optimise your results — increasing visibility, boosting enquiries, and driving long-term patient growth.</p>
 					</div>
 				</div>
 			</div>
@@ -259,7 +259,7 @@ Template Post Type: post, page
 						<div class="reviews">
 							<div class="one border-color-faded">
 								<p class="l-h-1 color-primary" style="font-size: 12px;">June 2025</p>
-								<p class="small quote">Partnering with this team was one of the best decisions we made for our clinic. Within just a few months, our online visibility improved significantly, and we experienced a 40% increase in patient enquiries. Their strategic approach, attention to detail, and genuine understanding of the aesthetics industry made all the difference. We finally feel like our marketing is working for us.</p>
+								<p class="small quote color-light">Partnering with this team was one of the best decisions we made for our clinic. Within just a few months, our online visibility improved significantly, and we experienced a 40% increase in patient enquiries. Their strategic approach, attention to detail, and genuine understanding of the aesthetics industry made all the difference. We finally feel like our marketing is working for us.</p>
 								<div class="flex center-left" style="gap: 12px;">
 									<div class="i flex center-center b-r-100 background-faded">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" class="width-auto display-block">
