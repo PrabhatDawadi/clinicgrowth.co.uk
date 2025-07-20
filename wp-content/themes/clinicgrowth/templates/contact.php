@@ -8,7 +8,7 @@ Template Post Type: page
 <?php get_header(); ?>
 
 	<section id='common-page'>
-        <section class='landing'>
+        <section class='landing background-faded'>
             <div class='container'>
                 <div class='txt'>
                     <h2 class='title color-secondary font-bold'>Contact Us</h2>

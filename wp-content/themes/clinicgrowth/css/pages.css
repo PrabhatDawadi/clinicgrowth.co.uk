@@ -1,9 +1,6 @@
 /* =================================
 	Home Page
 ================================= */
-#home-page .hero {
-  background-color: #ecf7f5;
-}
 #home-page .hero .col {
   height: 840px;
   padding-top: 40px;
@@ -19,7 +16,7 @@
   padding-left: 60px;
 }
 #home-page .hero .right svg.enclose path {
-  fill: #ecf7f5;
+  fill: #eaf3ff;
 }
 #home-page .hero .right video {
   height: 100%;
@@ -59,7 +56,7 @@
 }
 #home-page .help {
   padding: 120px 0;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 #home-page .help .top {
   margin-bottom: 80px;
@@ -100,7 +97,7 @@
   gap: 24px;
   margin-bottom: 32px;
   padding-bottom: 32px;
-  border-bottom: solid 1px #ecf7f5;
+  border-bottom: solid 1px #eaf3ff;
 }
 #home-page .grow .all .one:last-child {
   margin-bottom: 0;
@@ -110,7 +107,6 @@
 #home-page .grow .all .one .icon {
   height: 68px;
   width: 68px;
-  background: #ecf7f5;
 }
 #home-page .grow .all .one .icon svg {
   height: 24px;
@@ -118,10 +114,10 @@
   display: block;
 }
 #home-page .grow .all .one .icon svg path {
-  fill: #57baa9;
+  fill: #2f80ed;
 }
 #home-page .how-it-works {
-  background-color: #fafafa;
+  background-color: #f8f8f8;
   padding: 120px 0;
 }
 #home-page .how-it-works .top {
@@ -155,7 +151,7 @@
 }
 #home-page .testimonials .right .reviews .one {
   background-color: #fdfdfd;
-  border: solid 1px #ecf7f5;
+  border: solid 1px #eaf3ff;
   padding: 32px;
   border-radius: 8px;
 }
@@ -165,20 +161,18 @@
 #home-page .testimonials .right .reviews .one .i {
   height: 40px;
   width: 40px;
-  background-color: #ecf7f5;
 }
 #home-page .testimonials .right .reviews .one .i svg {
   height: 16px;
 }
 #home-page .testimonials .right .reviews .one .i svg path {
-  fill: #57baa9;
+  fill: #2f80ed;
 }
 #home-page .testimonials .right .reviews .one ._t {
   font-size: 12px;
   color: #8f8f8f;
 }
 #home-page .cta {
-  background-color: #ecf7f5;
   padding: 120px 0 148px 0;
 }
 #home-page .cta .row {
@@ -188,6 +182,9 @@
   font-size: 48px;
 }
 
+/* =================================
+	Services Page
+================================= */
 .articles {
   background-color: #202020;
   padding: 80px 0;
@@ -208,7 +205,7 @@
   background-color: transparent;
   font-size: 16px;
   line-height: 1;
-  color: #57baa9;
+  color: #2f80ed;
 }
 .articles .top .right button:hover {
   color: white;
@@ -249,7 +246,7 @@
   transition: all 0.2s;
 }
 .articles .all .one .desc .title a:hover {
-  color: #57baa9;
+  color: #2f80ed;
 }
 .articles .all .one .desc .con {
   font-size: 14px;
@@ -264,7 +261,7 @@
   font-size: 12px;
   line-height: 1;
   letter-spacing: 2px;
-  color: #57baa9;
+  color: #2f80ed;
 }
 .articles .all .one .desc button:hover {
   color: white;
@@ -290,11 +287,11 @@
 }
 .articles .pagination a:hover,
 .articles .pagination .current:hover {
-  background-color: #57baa9;
+  background-color: #2f80ed;
   color: white;
 }
 .articles .pagination .current {
-  background-color: #57baa9;
+  background-color: #2f80ed;
   color: white;
 }
 
@@ -314,10 +311,10 @@
   transition: all 0.2s;
 }
 .article-filters ul li a:hover {
-  color: #57baa9;
+  color: #2f80ed;
 }
 .article-filters ul li.active {
-  color: #57baa9;
+  color: #2f80ed;
 }
 
 .article-single .content {
@@ -382,13 +379,13 @@
   fill: white;
 }
 .article-single .content .inner .row .right ul li svg path.b {
-  fill: #57baa9;
+  fill: #2f80ed;
 }
 .article-single .content .inner .row .right ul li:hover svg path.w {
   fill: white;
 }
 .article-single .content .inner .row .right ul li:hover svg path.b {
-  fill: #1a2e35;
+  fill: #1a1a1a;
 }
 .article-single .content .inner .row .right .next-prev img {
   width: 100%;
@@ -410,7 +407,7 @@
   font-weight: 300;
 }
 .article-single .content .inner .row .right .next-prev:hover p.t {
-  color: #57baa9;
+  color: #2f80ed;
 }
 
 .faqs {
@@ -437,7 +434,7 @@
   background-color: transparent;
   font-size: 16px;
   line-height: 1;
-  color: #57baa9;
+  color: #2f80ed;
 }
 .faqs .top .right button:hover {
   color: white;
@@ -488,7 +485,7 @@
   transform: rotate(180deg);
 }
 .faqs .all .one .title .arr-open svg path {
-  fill: #57baa9;
+  fill: #2f80ed;
 }
 .faqs .all .one .con {
   padding: 30px 30px 30px 30px;
@@ -510,7 +507,7 @@
 .faqs .cir6 {
   position: absolute;
   border-radius: 100%;
-  border: solid 1px #57baa9;
+  border: solid 1px #2f80ed;
 }
 .faqs .cir1 {
   top: -80px;
@@ -592,7 +589,7 @@
 .booking .cir6 {
   position: absolute;
   border-radius: 100%;
-  border: solid 1px #57baa9;
+  border: solid 1px #2f80ed;
 }
 .booking .cir1 {
   top: -80px;
@@ -669,18 +666,17 @@
   display: block;
 }
 #contact .inner .row .right ul.info li svg path {
-  fill: #57baa9;
+  fill: #2f80ed;
 }
 #contact .inner .row .right ul.info li p a {
   transition: all 0.2s;
 }
 #contact .inner .row .right ul.info li p a:hover {
-  color: #57baa9;
+  color: #2f80ed;
 }
 
 #common-page .landing {
   padding: 120px 0;
-  background-color: #ecf7f5;
 }
 #common-page .landing .txt {
   position: relative;
@@ -719,7 +715,7 @@
   color: #373737;
 }
 #common-content a {
-  color: #57baa9;
+  color: #2f80ed;
 }
 #common-content a:hover {
   text-decoration: underline;

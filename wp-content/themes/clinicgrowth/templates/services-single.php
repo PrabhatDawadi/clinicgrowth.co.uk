@@ -7,7 +7,7 @@ Template Post Type: services, post
 <?php get_header(); ?>
 
     <section id='common-page'>
-        <section class='landing cover-img' style="background-image: url(<?php echo the_post_thumbnail_url(); ?>)">
+        <section class='landing background-faded'>
             <div class='container'>
                 <div class='txt'>
                     <h1 class='color-white title'>

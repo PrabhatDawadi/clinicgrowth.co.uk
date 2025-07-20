@@ -4,7 +4,7 @@
 			?>
 
 			<section id="home-page">
-				<section class="cta">
+				<section class="cta background-faded">
 					<section class="container">
 						<div class="col-1-1 row flex bottom-left">
 							<div class="col-3-4">
@@ -79,7 +79,7 @@
 					<p class='color-white tiny t-a-c' style="color: rgba(255, 255, 255, 0.48);">
 						Copyright &copy; <?php echo date("Y"); ?>,
 						<br />
-						<a class="transition hover-color-primary" href='<?php echo get_site_url(); ?>/'>Cosmetic Digital</a> - All Rights Reserved.
+						<a class="transition hover-color-primary" href='<?php echo get_site_url(); ?>/'>Clinic Growth</a> - All Rights Reserved.
 						<br />
 						Version: <?php echo $siteVersion; ?>
 					</p>

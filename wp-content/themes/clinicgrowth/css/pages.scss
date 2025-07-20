@@ -6,7 +6,6 @@
 
 #home-page {
 	.hero {
-		background-color: #ecf7f5;
 		.col {
 			height: 840px;
 			padding-top: 40px;
@@ -22,7 +21,7 @@
 			padding-left: 60px;
 			svg.enclose {
 				path {
-					fill: #ecf7f5;
+					fill: $fadedBackgroundColor;
 				}
 			}
 			video {
@@ -60,7 +59,7 @@
 	}
 	.help {
 		padding: 120px 0;
-		background-color: #fafafa;
+		background-color: #f8f8f8;
 		.top {
 			margin-bottom: 80px;
 			.right {
@@ -107,7 +106,7 @@
 				gap: 24px;
 				margin-bottom: 32px;
 				padding-bottom: 32px;
-				border-bottom: solid 1px #ecf7f5;
+				border-bottom: solid 1px $fadedBackgroundColor;
 				&:last-child {
 					margin-bottom: 0;
 					padding-bottom: 0;
@@ -116,7 +115,6 @@
 				.icon {
 					height: 68px;
 					width: 68px;
-					background: #ecf7f5;
 					svg {
 						height: 24px;
 						width: auto;
@@ -130,7 +128,7 @@
 		}
 	}
 	.how-it-works {
-		background-color: #fafafa;
+		background-color: #f8f8f8;
 		padding: 120px 0;
 		.top {
 			text-align: center;
@@ -167,7 +165,7 @@
 			.reviews {
 				.one {
 					background-color: #fdfdfd;
-					border: solid 1px #ecf7f5;
+					border: solid 1px $fadedBackgroundColor;
 					padding: 32px;
 					@include vendorPrefix("border-radius", "8px");
 					.quote {
@@ -176,7 +174,6 @@
 					.i {
 						height: 40px;
 						width: 40px;
-						background-color: #ecf7f5;
 						svg {
 							height: 16px;
 							path {
@@ -193,7 +190,6 @@
 		}
 	}
 	.cta {
-		background-color: #ecf7f5;
 		padding: 120px 0 148px 0;
 		.row {
 			gap: 120px;
@@ -203,6 +199,10 @@
 		}
 	}
 }
+
+/* =================================
+	Services Page
+================================= */
 
 //
 //
@@ -774,7 +774,6 @@
 #common-page {
 	.landing {
 		padding: 120px 0;
-		background-color: #ecf7f5;
 		.txt {
 			position: relative;
 			z-index: 2;

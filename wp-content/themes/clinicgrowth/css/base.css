@@ -128,47 +128,51 @@ a {
 
 .color-primary,
 .hover-color-primary:hover {
-  color: #57baa9;
+  color: #2f80ed;
 }
 
 .color-secondary,
 .hover-color-secondary:hover {
-  color: #1a2e35;
+  color: #1a1a1a;
 }
 
 .color-tertiary,
 .hover-color-tertiary:hover {
-  color: #ff6b5e;
+  color: #e53935;
 }
 
 .background-primary,
 .hover-background-primary:hover {
-  background-color: #57baa9;
+  background-color: #2f80ed;
 }
 
 .background-secondary,
 .hover-background-secondary:hover {
-  background-color: #1a2e35;
+  background-color: #1a1a1a;
 }
 
 .background-tertiary,
 .hover-background-tertiary:hover {
-  background-color: #ff6b5e;
+  background-color: #e53935;
 }
 
 .hover-color-primary-path:hover,
 .color-primary-path path {
-  fill: #57baa9;
+  fill: #2f80ed;
 }
 
 .hover-color-secondary-path:hover,
 .color-secondary-path path {
-  fill: #1a2e35;
+  fill: #1a1a1a;
 }
 
 .hover-color-tertiary-path:hover,
 .color-tertiary-path path {
-  fill: #ff6b5e;
+  fill: #e53935;
+}
+
+.background-faded {
+  background-color: #eaf3ff;
 }
 
 /* ====================================
@@ -522,12 +526,12 @@ textarea {
   background: #fafafa;
   border: solid 1px;
   border-color: #f0f0f0;
-  padding: 0 24px;
+  padding: 0 16px;
   line-height: 46px;
   height: 48px;
   font-size: 13px;
   font-weight: 300;
-  border-radius: 24px;
+  border-radius: 6px;
   width: 100%;
   display: block;
   transition: all 0.2s;
@@ -535,7 +539,7 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #1a2e35;
+  border-color: #1a1a1a;
 }
 input:-webkit-autofill,
 select:-webkit-autofill,
@@ -570,7 +574,7 @@ textarea:-webkit-autofill:hover {
 
 .error {
   color: red;
-  border-color: #1a2e35;
+  border-color: #1a1a1a;
   animation: shake 0.6s linear;
 }
 
@@ -598,7 +602,7 @@ input[type=checkbox] {
   cursor: pointer;
 }
 input[type=checkbox]:focus {
-  border-color: #57baa9;
+  border-color: #2f80ed;
 }
 input[type=checkbox]:checked:after {
   position: absolute;
@@ -608,8 +612,8 @@ input[type=checkbox]:checked:after {
   height: 11px;
   width: 5px;
   transform: rotate(45deg);
-  border-right: solid 2px #1a2e35;
-  border-bottom: solid 2px #1a2e35;
+  border-right: solid 2px #1a1a1a;
+  border-bottom: solid 2px #1a1a1a;
 }
 
 select {
@@ -625,25 +629,9 @@ select[disabled] {
   background: #8f8f8f url("/images/icons/select.svg") right center no-repeat;
   cursor: not-allowed;
 }
-@keyframes shake {
-  8%, 41% {
-    transform: translateX(-10px);
-  }
-  25%, 58% {
-    transform: translateX(10px);
-  }
-  75% {
-    transform: translateX(-5px);
-  }
-  92% {
-    transform: translateX(5px);
-  }
-  0%, 100% {
-    transform: translateX(0);
-  }
-}
+
 textarea {
-  padding: 12px 20px;
+  padding: 12px 16px;
   height: 240px;
   line-height: 22px;
 }
@@ -685,12 +673,12 @@ header nav ul li a {
   transition: all 0.2s;
 }
 header nav ul li.current_page_item a {
-  color: #ff6b5e;
+  color: #e53935;
 }
 header .menu-btn {
   height: 36px;
   width: 36px;
-  background-color: #57baa9;
+  background-color: #2f80ed;
   position: absolute;
   top: 26px;
   left: 16px;
@@ -719,7 +707,7 @@ footer .top .row {
   justify-content: space-between;
 }
 footer .top .row .col .title {
-  border-left: solid 4px #57baa9;
+  border-left: solid 4px #2f80ed;
   padding-left: 12px;
 }
 footer .top .row .col ._link {
@@ -728,7 +716,7 @@ footer .top .row .col ._link {
   color: rgba(255, 255, 255, 0.52);
 }
 footer .bottom {
-  background-color: #0e1a1e;
+  background-color: rgba(0, 0, 0, 0.32);
   padding: 48px 0;
   margin-top: 48px;
 }
@@ -761,7 +749,7 @@ footer .bottom {
   display: block;
   width: 5px;
   height: 5px;
-  background-color: #57baa9;
+  background-color: #2f80ed;
   border-radius: 100%;
   translate: 0 27.5px;
 }
@@ -843,7 +831,7 @@ span.wpcf7-list-item {
 .wpcf7 form.unaccepted .wpcf7-response-output {
   padding: 10px;
   font-size: 11px;
-  color: #57baa9;
+  color: #2f80ed;
   background: #141414;
   text-align: center;
   margin-bottom: 10px;
@@ -902,11 +890,11 @@ span.wpcf7-not-valid-tip {
 }
 
 .flex-direction-nav .flex-prev {
-  background: #1a2e35 url(../images/icons/sliders/prev.svg) no-repeat 50% 50%;
+  background: #1a1a1a url(../images/icons/sliders/prev.svg) no-repeat 50% 50%;
 }
 
 .flex-direction-nav .flex-next {
-  background: #1a2e35 url(../images/icons/sliders/next.svg) no-repeat 50% 50%;
+  background: #1a1a1a url(../images/icons/sliders/next.svg) no-repeat 50% 50%;
 }
 
 .flex-direction-nav .flex-prev,
