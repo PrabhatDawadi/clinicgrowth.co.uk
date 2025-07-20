@@ -1,13 +1,12 @@
 <?php
-
-/*
-Plugin Name: Services
-Plugin URI: https://clinicgrowth.co.uk
-Version: 1.0
-Author: Prabhat Dawadi
-Author URI: https://prabhatdawadi.com
-Description: Plugin to add services.
-*/
+    /*
+        Plugin Name: Services
+        Plugin URI: https://clinicgrowth.co.uk
+        Version: 1.0
+        Author: Prabhat Dawadi
+        Author URI: https://prabhatdawadi.com
+        Description: Plugin to add services.
+    */
  
 function ourServices() {
  

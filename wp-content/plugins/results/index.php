@@ -1,13 +1,12 @@
 <?php
-
-/*
-Plugin Name: Results
-Plugin URI: https://clinicgrowth.co.uk
-Version: 1.0
-Author: Prabhat Dawadi
-Author URI: https://prabhatdawadi.com
-Description: Plugin to add results.
-*/
+    /*
+        Plugin Name: Results
+        Plugin URI: https://clinicgrowth.co.uk
+        Version: 1.0
+        Author: Prabhat Dawadi
+        Author URI: https://prabhatdawadi.com
+        Description: Plugin to add results.
+    */
  
 function ourResults() {
  

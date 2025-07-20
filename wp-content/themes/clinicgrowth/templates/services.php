@@ -4,6 +4,7 @@
 		Template Post Type: page
 	*/
 ?>
+
 <?php get_header(); ?>
 
 	<section id='common-page'>
@@ -28,17 +29,3 @@
 	</section>
 
 <?php get_footer();?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,12 +1,11 @@
 <?php
-/*
-Template Name: Results
-Template Post Type: page
-*/
+    /*
+        Template Name: Results
+        Template Post Type: page
+    */
 ?>
-<?php get_header(); ?>
 
-    <!-- Landing -->
+<?php get_header(); ?>
 
 	<section id='common-page'>
         <section class='landing background-faded'>
@@ -30,35 +29,3 @@ Template Post Type: page
 	</section>
 
 <?php get_footer();?>
-
-
-<!-- <div class="service">
-    <h4>Invisalign & Cosmetic Dentistry</h4>
-    <p>...</p>
-    <br/>
-</div>
-<div class="service">
-    <h4>Facial Aesthetics & Skin Boosters</h4>
-    <p>...</p>
-    <br/>
-</div>
-<div class="service">
-    <h4>Medspa Monthly Growth</h4>
-    <p>...</p>
-    <p>(even placeholders or 2–3 examples to start — builds trust)</p>
-    <br/>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-

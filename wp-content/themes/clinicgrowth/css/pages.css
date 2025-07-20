@@ -286,8 +286,8 @@
 }
 #services-single-page .content .other-services .one {
   border-bottom: solid 1px #eaf3ff;
-  padding-bottom: 24px;
-  margin-bottom: 24px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 #services-single-page .content .other-services .one:last-child {
   padding-bottom: 0;

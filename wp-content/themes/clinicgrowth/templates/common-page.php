@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: Common Page
-Template Post Type: page, post
-*/
+    /*
+        Template Name: Common Page
+        Template Post Type: page, post
+    */
 ?>
 
 <?php get_header(); ?>
