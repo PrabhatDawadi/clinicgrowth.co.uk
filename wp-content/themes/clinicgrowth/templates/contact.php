@@ -23,8 +23,9 @@
         </section>
     </section>
 
-	<section id='contact'>
+	<section id='contact-page'>
 		<div class='container'>
+			<div class="container-medium">
 			<div class='col-1-1 flex top-left row'>
 				<div class='col-1-2 left'>
 					<h4 class="font-bold color-secondary l-h-1">Send Message</h4>
@@ -131,6 +132,7 @@
 					</ul>						
 				</div>
 			</div>
+		</div>
 		</div>
 	</section>
 

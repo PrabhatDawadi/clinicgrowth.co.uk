@@ -6,12 +6,12 @@
 				<section class="cta background-faded">
 					<section class="container">
 						<div class="col-1-1 row flex bottom-left">
-							<div class="col-3-4">
+							<div class="col-3-4 left">
 								<p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Growth Audit</p>
-								<h4 class="font-bold l-h-1 title color-tertiary000 color-secondary">Discover what’s holding your clinic back and get a clear, tailored plan to grow.</h4>
+								<h4 class="font-bold l-h-1 title color-secondary">Discover what’s holding your clinic back and get a clear, tailored plan to grow.</h4>
 							</div>
-							<div class="col-1-4">
-								<div class="flex center-right">
+							<div class="col-1-4 right">
+								<div class="flex center-right btn">
 								<a
 									class="display-block"
 									href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 

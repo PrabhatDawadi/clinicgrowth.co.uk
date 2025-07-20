@@ -19,21 +19,7 @@
 		<section class="hero background-faded">
 			<section class="container">
 				<div class="col-1-1 col flex center-center">
-					<div class="col-1-1 flex center-left">
-						<div class="col-1-2">
-							<h1 class="font-bold t-a-l l-h-1-1 mar-0-a title color-secondary">We help private clinics <br/>attract 10–30 new <br/><span class="color-primary">high-value patients</span> <br/>every month.</h1>
-							<h2 class="font-regular subtitle l-h-1-2">Specialist marketing for dentists & aesthetic clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
-							<div class="flex">
-								<a
-									class="display-block"
-									href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
-									target="_blank"
-									rel='noreferrer'
-								>
-									<button class="background-tertiary color-white hover-background-tertiary hover-color-white">Book Your Free Growth Audit</button>
-								</a>
-							</div>
-						</div>
+					<div class="col-1-1 flex center-left row">
 						<div class="col-1-2 right">
 							<div class="of-hid pos-rel">
 								<svg xmlns="http://www.w3.org/2000/svg" width="538.999" height="539" viewBox="0 0 538.999 539" class="enclose col-1-1 height-auto display-block pos-rel" style="z-index: 4;">
@@ -66,6 +52,20 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-1-2 left">
+							<h1 class="font-bold t-a-l l-h-1-1 mar-0-a title color-secondary">We help private clinics <br/>attract 10–30 new <br/><span class="color-primary">high-value patients</span> <br/>every month.</h1>
+							<h2 class="font-regular subtitle l-h-1-2">Specialist marketing for dentists & aesthetic clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
+							<div class="flex btn">
+								<a
+									class="display-block"
+									href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
+									target="_blank"
+									rel='noreferrer'
+								>
+									<button class="background-tertiary color-white hover-background-tertiary hover-color-white">Book Your Free Growth Audit</button>
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -77,7 +77,7 @@
 	<section id="home-page">
 		<section class="trust">
 			<div class="container">
-				<div class="col-1-1 flex center-left">
+				<div class="col-1-1 flex center-left row">
 					<div>
 						<p class="l-h-1 small color-primary">Large & Small</p>
 						<p class="color-secondary font-bold large">Trusted by Clinics</p>
@@ -103,7 +103,7 @@
 		<section class="help">
 			<div class="container">
 				<div class="col-1-1 flex bottom-left top">
-					<div class="col-1-2">
+					<div class="col-1-2 left">
 						<p class="l-h-1 small color-primary">Expertise</p>
 						<h3 class="font-bold color-secondary">Who we Help</h3>
 						<p>Providing clinics with expertise and knowledge in digital marketing and design that works since 2005.</p>
@@ -176,7 +176,7 @@
 	<section id="home-page">
 		<section class="grow">
 			<div class="container">
-				<div class="col-1-1 flex top-left">
+				<div class="col-1-1 flex top-left row">
 					<div class="col-2-5 left">
 						<p class="l-h-1 small color-primary">Benefits</p>
 						<h3 class="font-bold color-secondary">How We Grow Your Clinic</h3>
@@ -244,21 +244,33 @@
 					<h3 class="font-bold color-secondary">How It Works</h3>
 					<p>We continuously optimise for long-term growth and patient bookings.</p>
 				</div>
-				<div class="all flex">
-					<div class="col-1-3 one">						
-						<img class="width-auto display-block mar-0-a" alt="audit" src="<?php bloginfo('template_directory'); ?>/images/home/audit.png" />
-						<p class="l-h-1 large font-medium title t-a-c">1. Audit</p>
-						<p class="description small t-a-c color-light">We start with a deep dive into your clinic’s digital presence — analysing your website, branding, SEO, and marketing strategy to uncover growth opportunities.</p>
+				<div class="flex all">
+					<div class="col-1-3 one">
+						<div class="img">
+							<img class="width-auto display-block mar-0-a" alt="audit" src="<?php bloginfo('template_directory'); ?>/images/home/audit.png" />
+						</div>
+						<div class="desc">
+							<p class="l-h-1 large font-medium title">1. Audit</p>
+							<p class="description small color-light">We start with a deep dive into your clinic’s digital presence — analysing your website, branding, SEO, and marketing strategy to uncover growth opportunities.</p>
+						</div>
 					</div>
-					<div class="col-1-3 one">						
-						<img class="width-auto display-block mar-0-a" alt="launch" src="<?php bloginfo('template_directory'); ?>/images/home/launch.png" />
-						<p class="l-h-1 large font-medium title t-a-c">2. Launch</p>
-						<p class="description small t-a-c color-light">Our team designs and launches a tailored solution — from website improvements to targeted campaigns — built to attract and convert the right patients.</p>
+					<div class="col-1-3 one">
+						<div class="img">
+							<img class="width-auto display-block mar-0-a" alt="launch" src="<?php bloginfo('template_directory'); ?>/images/home/launch.png" />
+						</div>
+						<div class="desc">
+							<p class="l-h-1 large font-medium title">2. Launch</p>
+							<p class="description small color-light">Our team designs and launches a tailored solution — from website improvements to targeted campaigns — built to attract and convert the right patients.</p>
+						</div>
 					</div>
-					<div class="col-1-3 one">						
-						<img class="width-auto display-block mar-0-a" alt="growth" src="<?php bloginfo('template_directory'); ?>/images/home/growth.png" />
-						<p class="l-h-1 large font-medium title t-a-c">3. Growth</p>
-						<p class="description small t-a-c color-light">With everything live, we continually optimise your results — increasing visibility, boosting enquiries, and driving long-term patient growth.</p>
+					<div class="col-1-3 one">
+						<div class="img">
+							<img class="width-auto display-block mar-0-a" alt="growth" src="<?php bloginfo('template_directory'); ?>/images/home/growth.png" />
+						</div>
+						<div class="desc">
+							<p class="l-h-1 large font-medium title">3. Growth</p>
+							<p class="description small color-light">With everything live, we continually optimise your results — increasing visibility, boosting enquiries, and driving long-term patient growth.</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -270,7 +282,7 @@
 	<section id="home-page">
 		<section class="testimonials">
 			<div class="container">
-				<div class="col-1-1 flex top-left">
+				<div class="col-1-1 flex top-left row">
 					<div class="col-2-5 left">
 						<p class="l-h-1 small color-primary">Reviews</p>
 						<h3 class="font-bold color-secondary">Our Testimonials</h3>

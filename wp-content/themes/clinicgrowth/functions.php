@@ -285,7 +285,7 @@
 						while($allPosts->have_posts()):$allPosts->the_post();
 							echo '<div class="one">';
 								echo '<a href="'. get_the_permalink() . '">';									
-									echo '<div class="_i cover-img" style="background-image: url(';
+									echo '<div class="img cover-img" style="background-image: url(';
 											echo the_post_thumbnail_url();
 										echo ');">';
 										echo '<img src="';

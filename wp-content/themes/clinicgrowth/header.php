@@ -67,7 +67,7 @@
 								</svg>					
 							</a>
 						</div>
-						<div class="col-1-2 flex center-center">
+						<div class="col-1-2 flex center-center nav-holder">
 							<?php if ( has_nav_menu( 'primary' ) ) : ?>
 								<nav id='navigations'>
 									<?php
@@ -82,7 +82,7 @@
 								</nav>
 							<?php endif; ?>
 						</div>
-						<div class="col-1-4 mar-l-a flex center-right">
+						<div class="col-1-4 mar-l-a flex center-right btn-holder">
 							<a href='<?php echo get_site_url(); ?>/contact-us/' class="display-block">
 								<button class="background-primary color-white hover-background-secondary hover-color-white">Contact Us</button>
 							</a>

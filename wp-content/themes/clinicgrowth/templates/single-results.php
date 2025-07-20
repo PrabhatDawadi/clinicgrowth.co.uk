@@ -31,7 +31,7 @@
                                 <?php endif; ?>
                             </div>
                             <div class="left">
-                                <h2 class="l-h-1 font-bold">
+                                <h2 class="l-h-1 font-bold main-title">
                                     <?php the_title(); ?>
                                 </h2>
                                 <hr class="line" />

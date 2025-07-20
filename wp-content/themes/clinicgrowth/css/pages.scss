@@ -8,7 +8,9 @@
 	.hero {
 		.col {
 			height: 840px;
-			padding-top: 40px;
+			.row {
+				flex-direction: row-reverse;
+			}
 		}
 		.title {
 			font-size: 60px;
@@ -139,6 +141,9 @@
 			.one {
 				img {
 					height: 168px;
+				}
+				.desc {
+					text-align: center;
 				}
 				.title {
 					margin: 32px 0 12px 0;
@@ -454,7 +459,7 @@
 			.one {
 				@include vendorPrefix("border-radius", "8px");
 				overflow: hidden;
-				._i {
+				.img {
 					height: 248px;
 					img {
 						width: 100%;
@@ -487,7 +492,7 @@
 	Contact Page
 ================================= */
 
-#contact {
+#contact-page {
 	padding: 80px 0;
 	hr {
 		outline: none;
