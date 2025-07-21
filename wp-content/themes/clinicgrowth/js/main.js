@@ -100,24 +100,6 @@ $(function () {
 		}
 	});
 
-	const openNoticePop2 = () => {
-		$("#notice2").fadeIn(200);
-	};
-	const closeNoticePop2 = () => {
-		$("#notice2").fadeOut(200);
-	};
-	$(document).on("click", ".open-notice2", function (e) {
-		openNoticePop2();
-	});
-	$(".close-notice2").on("click", function () {
-		closeNoticePop2();
-	});
-	$(document).on("click", "#notice2 .wrap", function (e) {
-		if (e.target == this) {
-			closeNoticePop2();
-		}
-	});
-
 	// ================================================================
 	//			1.5 Video Play Pop
 	// ================================================================
@@ -159,17 +141,17 @@ $(function () {
 
 	const openMenu = () => {
 		$("nav#navigations").addClass("open");
-		$(".transparentMenuActive").fadeIn(200);
+		$(".transparent-menu-active").fadeIn(200);
 		menuOpen = true;
 	};
 
 	const closeMenu = () => {
 		$("nav#navigations").removeClass("open");
-		$(".transparentMenuActive").fadeOut(200);
+		$(".transparent-menu-active").fadeOut(200);
 		menuOpen = false;
 	};
 
-	$(".transparentMenuActive").on("click", function () {
+	$(".transparent-menu-active").on("click", function () {
 		closeMenu();
 	});
 
@@ -177,39 +159,25 @@ $(function () {
 	//			1.5 FAQs
 	// ================================================================
 
-	$(".faqs .all .one .title").on("click", function () {
-		$(this).parent().find(".desc").slideToggle(200);
-		$(this).parent().find(".arr").toggleClass("arr-open");
-		$(this).find(".t").toggleClass("t-active");
-		$(this).parent().eq(0).find(".con").slideToggle(200);
-	});
-
-	$(".gallery-single .row .one").on("click", function () {
-		$("#gallery-slider").css({ display: "flex" });
-		$("#sliders").flexslider({
-			animation: "slide",
-			controlsContainer: "#sliders",
-			animationLoop: true,
-			slideshow: true,
-			slideshowSpeed: 4000,
-			animationSpeed: 400,
-			pauseOnHover: false,
-			pauseOnAction: true,
-			touch: true,
-			controlNav: false,
-			touch: true,
-			maxItems: 1,
-			minItems: 1,
-			move: 1,
-			itemMargin: 0,
-			directionNav: true,
-			useCSS: false,
-			keyboard: false,
-			multipleKeyboard: false,
-		});
-	});
-
-	$("#gallery-slider .wrap .box .close").on("click", function () {
-		$("#gallery-slider").css({ display: "none" });
+	$("#testimonials-slider").flexslider({
+		animation: "slide",
+		controlsContainer: "#testimonials-slider",
+		animationLoop: true,
+		slideshow: true,
+		slideshowSpeed: 4000,
+		animationSpeed: 400,
+		pauseOnHover: false,
+		pauseOnAction: true,
+		touch: true,
+		controlNav: true,
+		touch: true,
+		maxItems: 1,
+		minItems: 1,
+		move: 1,
+		itemMargin: 0,
+		directionNav: false,
+		useCSS: false,
+		keyboard: true,
+		multipleKeyboard: false,
 	});
 });

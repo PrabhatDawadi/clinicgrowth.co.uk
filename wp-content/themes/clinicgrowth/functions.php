@@ -315,5 +315,58 @@
 		}
 
 	// =======================================
+	//			Get Client Testimonials
+	// =======================================
+
+		function get_all_client_testimonials($limit='-1') {
+			if (is_plugin_active('client-testimonials/index.php')) {
+
+				$allPosts = new WP_Query(
+					array(
+						'post_type'			=> 'client-testimonials', 
+						'post_status'		=> 'publish', 
+						'posts_per_page'	=> $limit,
+						'order_by'			=> 'menu_order', 
+						'order'				=> 'asc'
+					)
+				);
+
+				if ($allPosts->have_posts()):
+					echo '<ul class="slides">';
+						while($allPosts->have_posts()):$allPosts->the_post();
+							echo '<li class="l-s-n">';
+								echo '<div class="one border-color-faded">';
+									echo '<p class="l-h-1 color-primary" style="font-size: 12px;">';
+										echo get_the_date('F j, Y');
+									echo '</p>';
+									echo '<p class="small quote color-light">';
+										echo strip_tags(get_the_content());
+									echo '</p>';
+									echo '<div class="flex center-left" style="gap: 12px;">';
+										echo '<div class="i flex center-center b-r-100 background-faded">';
+											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" class="width-auto display-block">
+													<path d="M-461-466v-2a3,3,0,0,0-3-3h-6a2.977,2.977,0,0,0-2.121.878A2.981,2.981,0,0,0-473-468v2a1,1,0,0,1-1,1,1,1,0,0,1-1-1v-2a4.967,4.967,0,0,1,1.464-3.535A4.968,4.968,0,0,1-470-473h6a5.006,5.006,0,0,1,5,5v2a1,1,0,0,1-1,1A1,1,0,0,1-461-466Zm-11-14a5.005,5.005,0,0,1,5-5,5.006,5.006,0,0,1,5,5,5.006,5.006,0,0,1-5,5A5.005,5.005,0,0,1-472-480Zm2,0a3,3,0,0,0,3,3,3,3,0,0,0,3-3,3,3,0,0,0-3-3A3,3,0,0,0-470-480Z" transform="translate(475 485)"/>
+												</svg>';
+										echo '</div>';
+										echo '<div>';
+											echo '<p class="l-h-1-2 tiny">';
+												echo get_the_title();
+											echo '</p>';
+											echo '<p class="l-h-1-2 _t">';
+												echo get_post_meta( get_the_ID(), 'COMPANY', true );
+											echo '</p>';
+										echo '</div>';
+									echo '</div>';
+								echo '</div>';
+							echo '</li>';
+						endwhile;
+					echo '</ul>';
+					wp_reset_postdata();
+				else :
+				endif;
+			}
+		}
+
+	// =======================================
 	//			END OF FUNCTIONS
 	// =======================================

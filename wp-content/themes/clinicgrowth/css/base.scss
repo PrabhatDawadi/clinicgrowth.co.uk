@@ -542,7 +542,7 @@ textarea {
 
 // ====== Header
 
-.transparentMenuActive {
+.transparent-menu-active {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -554,7 +554,7 @@ textarea {
 }
 
 header {
-	z-index: 9999;
+	z-index: 999999 !important;
 	padding: 36px 0 28px 0;
 	.logo {
 		svg {
@@ -651,83 +651,36 @@ footer {
 	}
 }
 
-// ====== Loader
+// ====== Video Player
 
-#loader {
-	height: 100vh;
-	background-color: #141414;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
+#video-player {
+	position: fixed;
 	inset: 0;
-	.box {
-		height: 60px;
-		width: 60px;
-		position: relative;
-		div {
+	z-index: 9999999;
+	display: none;
+	.wrap {
+		height: 100vh;
+		width: 100vw;
+		background: rgba(0, 0, 0, 0.86);
+		padding: 16px;
+		.close {
 			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			opacity: 0;
-			@include vendorPrefix(
-				"animation",
-				"rot 5s infinite cubic-bezier(0.15, 0.55, 0.85, 0.45), opa 5s infinite step-end"
-			);
-			&:after {
-				content: "";
-				display: block;
-				width: 5px;
-				height: 5px;
-				background-color: $primaryColor;
-				@include vendorPrefix("border-radius", "100%");
-				translate: 0 27.5px;
-			}
-			&:nth-child(1) {
-				@include vendorPrefix("animation-delay", "0s");
-			}
-			&:nth-child(2) {
-				@include vendorPrefix("animation-delay", "0.2s");
-			}
-			&:nth-child(3) {
-				@include vendorPrefix("animation-delay", "0.4s");
-			}
-			&:nth-child(4) {
-				@include vendorPrefix("animation-delay", "0.6s");
-			}
-			&:nth-child(5) {
-				@include vendorPrefix("animation-delay", "0.8s");
-			}
-			&:nth-child(6) {
-				@include vendorPrefix("animation-delay", "1s");
+			top: -12px;
+			right: -12px;
+			cursor: pointer;
+			z-index: 999;
+			svg {
+				path {
+					fill: $primaryColor;
+				}
 			}
 		}
-	}
-}
-
-@keyframes rot {
-	0% {
-		@include vendorPrefix("transform", "rotate(-90deg)");
-	}
-	35% {
-		@include vendorPrefix("transform", "rotate(270deg)");
-	}
-	70% {
-		@include vendorPrefix("transform", "rotate(630deg)");
-	}
-	100% {
-		@include vendorPrefix("transform", "rotate(630deg)");
-	}
-}
-
-@keyframes opa {
-	0% {
-		@include opacity1();
-	}
-	70% {
-		@include opacity0();
+		video {
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+			margin: 0 auto;
+		}
 	}
 }
 
@@ -800,20 +753,20 @@ span.wpcf7-not-valid-tip {
 	cursor: pointer;
 }
 .flex-direction-nav .flex-prev {
-	left: 28px;
+	left: 0px;
 }
 .flex-direction-nav .flex-next {
-	right: 28px;
+	right: 0px;
 }
 .flex-direction-nav li {
 	list-style: none;
 }
 .flex-direction-nav .flex-prev {
-	background: $secondaryColor url(../images/icons/sliders/prev.svg) no-repeat
+	background: $primaryColor url(../images/icons/sliders/prev.svg) no-repeat
 		50% 50%;
 }
 .flex-direction-nav .flex-next {
-	background: $secondaryColor url(../images/icons/sliders/next.svg) no-repeat
+	background: $primaryColor url(../images/icons/sliders/next.svg) no-repeat
 		50% 50%;
 }
 .flex-direction-nav .flex-prev,
@@ -828,7 +781,7 @@ span.wpcf7-not-valid-tip {
 	position: absolute;
 	text-align: center;
 	z-index: 99;
-	bottom: -40px;
+	bottom: -24px;
 	overflow: hidden;
 	left: 50%;
 	margin-left: -100px;
@@ -838,7 +791,7 @@ span.wpcf7-not-valid-tip {
 	text-align: center;
 }
 .flex-control-nav li {
-	margin: 0 6px;
+	margin: 0 4px;
 	display: inline-block;
 	vertical-align: top;
 	list-style: none;
@@ -851,7 +804,7 @@ span.wpcf7-not-valid-tip {
 	line-height: 12px;
 	background: transparent;
 	border: solid 1px;
-	border-color: #fff;
+	border-color: $fadedBackgroundColor;
 	color: transparent;
 }
 .flex-control-nav li a,
@@ -869,5 +822,5 @@ span.wpcf7-not-valid-tip {
 	left: 1px;
 }
 .flex-control-nav li a.flex-active:after {
-	background: #fff;
+	background: $primaryColor;
 }

@@ -175,6 +175,11 @@
 					@include vendorPrefix("border-radius", "8px");
 					.quote {
 						margin: 12px 0 24px 0;
+						display: -webkit-box;
+						-webkit-line-clamp: 5;
+						-webkit-box-orient: vertical;
+						overflow: hidden;
+						text-overflow: ellipsis;
 					}
 					.i {
 						height: 40px;

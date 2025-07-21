@@ -162,6 +162,11 @@
 }
 #home-page .testimonials .right .reviews .one .quote {
   margin: 12px 0 24px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #home-page .testimonials .right .reviews .one .i {
   height: 40px;
