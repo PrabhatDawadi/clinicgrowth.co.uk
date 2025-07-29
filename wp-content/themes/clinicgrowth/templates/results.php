@@ -8,11 +8,11 @@
 <?php get_header(); ?>
 
 	<section id='common-page'>
-        <section class='landing background-faded'>
+        <section class='landing cover-img' style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/landing-background.jpg);">
             <div class='container'>
                 <div class='txt'>
                     <p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Growth Results</p>
-                    <h2 class='title color-secondary font-bold l-h-1-1'>Clinic Marketing Results: Real Growth for Real Clinics</h2>
+                    <h2 class='title color-white font-bold l-h-1-1'>Clinic Marketing Results: Real Growth for Real Clinics</h2>
                 </div>
             </div>
         </section>

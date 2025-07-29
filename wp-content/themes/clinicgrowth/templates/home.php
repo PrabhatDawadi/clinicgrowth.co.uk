@@ -14,57 +14,23 @@
 	<h1 style="height: 0; overflow: hidden;">Dental &amp; Aesthetic Clinic Marketing Agency</h1>
 
 	<!-- Hero Landing -->
-	
+
 	<section id="home-page">
-		<section class="hero background-faded">
+		<section class="landing cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/landing-background.jpg);">
 			<section class="container">
 				<div class="col-1-1 col flex center-center">
-					<div class="col-1-1 flex center-left row">
-						<div class="col-1-2 right">
-							<div class="of-hid pos-rel">
-								<svg xmlns="http://www.w3.org/2000/svg" width="538.999" height="539" viewBox="0 0 538.999 539" class="enclose col-1-1 height-auto display-block pos-rel" style="z-index: 4;">
-  									<path d="M539.5,539.5H.5V.5h539v539ZM222.115,18.515a178.421,178.421,0,0,0-29.875,2.236,115.984,115.984,0,0,0-13.91,3.213,92.448,92.448,0,0,0-13.034,4.98,91.318,91.318,0,0,0-12.71,7.365,112.1,112.1,0,0,0-11.721,9.358,168.163,168.163,0,0,0-21.04,23.552c-13.147,17.471-24.975,38.312-36.414,58.466l-.715,1.259-.482.854c-11.4,20.218-23.187,41.121-32.805,62.144a315.057,315.057,0,0,0-12.73,31.994A221.831,221.831,0,0,0,28.3,257.145a202.226,202.226,0,0,0-2.733,34.745,194.163,194.163,0,0,0,3.37,34.717,171.348,171.348,0,0,0,9.727,33.011,141.814,141.814,0,0,0,26.98,42.71c3.693,4.042,7.775,8.07,12.132,11.973A237.972,237.972,0,0,0,105.584,435.5c8.931,5.905,19.077,11.954,31.017,18.494,10.47,5.734,20.866,11.072,32.4,16.956,18.534,9.5,39.541,20.273,59.6,28.016a210.035,210.035,0,0,0,29.1,9.094,144.314,144.314,0,0,0,14.357,2.535,117.406,117.406,0,0,0,14.22.9h.007c2.828,0,5.657-.114,8.409-.34a106.82,106.82,0,0,0,13.982-2.117,129.81,129.81,0,0,0,13.844-3.871,186.938,186.938,0,0,0,27.307-11.972c18.048-9.517,35.985-21.776,53.332-33.631l.035-.024c2.493-1.7,5.071-3.465,7.6-5.185,3.219-2.189,6.475-4.389,9.625-6.516C454.552,424.774,486.79,403,505.9,372.645a137.824,137.824,0,0,0,12.783-26.639,184.6,184.6,0,0,0,7.73-29.423,256.125,256.125,0,0,0,3.548-31.167c.552-10,.632-20.727.239-31.87-.357-10.839-1.141-21.49-2.33-31.658-1.245-10.651-2.972-21.091-5.133-31.03a279.1,279.1,0,0,0-8.3-30.111,248.08,248.08,0,0,0-11.836-28.9,225.669,225.669,0,0,0-15.658-27.158,202.947,202.947,0,0,0-19.3-24.43A171.414,171.414,0,0,0,445.01,59.747a141.546,141.546,0,0,0-25.614-15.4c-29.65-13.716-64.259-16.169-100.9-18.766-7.892-.559-16.052-1.138-24.2-1.835-6.143-.527-12.436-1.134-18.521-1.722C257.923,20.3,239.464,18.515,222.115,18.515Z" transform="translate(-0.5 -0.5)" fill="#b72962"/>
-								</svg>
-								<div class="pos-abs inset-0">
-									<video
-									class=""
-										playsInline={true}
-										controls={false}
-										autoPlay={true}
-										muted={true}
-										loop={true}>
-										<source
-											src='<?php bloginfo('template_directory'); ?>/images/home/banner.mp4'
-											type='video/mp4'
-										/>
-									</video>
-								</div>
-								<div class="play flex center-center pos-abs b-r-100 cursor-pointer play-video" data-video-url="<?php bloginfo('template_directory'); ?>/images/home/banner.mp4">
-									<svg 
-										xmlns="http://www.w3.org/2000/svg" width="21.059" height="23.399" viewBox="0 0 21.059 23.399"
-										class="col-1-1 height-auto display-block"
-										style="height: 24px; margin-left: 4px;">
-  										<path 
-											d="M2,23.7V.3L23.059,12Zm2-20V20.3L18.941,12Z" 
-											transform="translate(-2 -0.3)"
-  											fill="white"/>
-									</svg>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-2 left">
-							<h1 class="font-bold t-a-l l-h-1-1 mar-0-a title color-secondary">We help private clinics <br/>attract 10–30 new <br/><span class="color-primary">high-value patients</span> <br/>every month.</h1>
-							<h2 class="font-regular subtitle l-h-1-2">Specialist marketing for dentists & aesthetic clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
-							<div class="flex btn">
-								<a
-									class="display-block"
-									href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
-									target="_blank"
-									rel='noreferrer'
-								>
-									<button class="background-tertiary color-white hover-background-tertiary hover-color-white">Book Your Free Growth Audit</button>
-								</a>
-							</div>
+					<div class="txt mar-0-a">
+						<h1 class="font-bold t-a-c l-h-1-1 mar-0-a title color-white">We help private clinics <br/>attract 10–30 new <br/><span class="color-primary">high-value patients</span> <br/>every month.</h1>
+						<h2 class="font-regular t-a-c color-white subtitle l-h-1-2">Specialist marketing for dentists & aesthetic clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
+						<div class="flex center-center btn">
+							<a
+								class="display-block"
+								href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
+								target="_blank"
+								rel='noreferrer'
+							>
+								<button class="background-primary color-white hover-background-secondary hover-color-white">Book Your Free Growth Audit</button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -128,40 +94,22 @@
 				</div>
 				<div class="all flex">
 					<div class="col-1-3 one">
-						<div class="img">
-							<div class="cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/private-dentist.jpg)">
-								<svg xmlns="http://www.w3.org/2000/svg" width="524" height="524.001" viewBox="0 0 524 524.001" class="col-1-1 height-auto display-block">
-									<g transform="translate(-6362 -2725)">
-										<path d="M524,524H0V0H524V524ZM278.379,2c-4.13,0-8.329.094-12.479.28a268.471,268.471,0,0,0-35.416,3.815,221.788,221.788,0,0,0-33.674,8.659c-22.661,7.846-41.859,19.088-57.061,33.413a150.308,150.308,0,0,0-15.7,17.358,224.043,224.043,0,0,0-13.624,19.711c-8.557,13.777-16.072,28.369-24.027,43.817-6.213,12.066-12.637,24.538-19.6,36.573-6.479,11.2-13.564,22.244-20.416,32.924-9.705,15.128-18.872,29.417-26.521,44.185a195.126,195.126,0,0,0-9.992,22.332,128.137,128.137,0,0,0-6.244,22.891c-3.362,19.983-1.5,42.01,5.537,65.468a228.978,228.978,0,0,0,12.684,32.539,291.277,291.277,0,0,0,17.277,31.026,273.805,273.805,0,0,0,43.933,53.374c17.073,15.855,35.26,27.921,54.054,35.862,14.754,6.234,31.167,10.466,50.177,12.938,15.071,1.96,31.488,2.834,53.229,2.834h.007c8.276,0,16.631-.124,23.813-.24,23.318-.431,44.33-.968,65.361-3.185a316.046,316.046,0,0,0,32.071-4.938,233.92,233.92,0,0,0,31.457-8.831,216.781,216.781,0,0,0,30.537-13.639,208.125,208.125,0,0,0,28.345-18.492,187.07,187.07,0,0,0,24.77-23.061,163.577,163.577,0,0,0,19.81-27.344,169.2,169.2,0,0,0,13.721-31.116,219.121,219.121,0,0,0,8.111-33.933c3.473-21.773,4.353-45.862,2.616-71.6-.8-11.858-2.154-23.8-4.023-35.485-1.857-11.608-4.274-23.3-7.186-34.742-2.891-11.364-6.352-22.81-10.285-34.019-3.9-11.127-8.386-22.336-13.319-33.315C475.7,124.3,463.645,103.18,450.5,85.285A235.942,235.942,0,0,0,427.49,58.28a184.908,184.908,0,0,0-26.737-22.295c-16.834-11.4-36.315-20.1-57.9-25.857A250.288,250.288,0,0,0,278.379,2Z" transform="translate(6362 2725)" fill="#1b00e6"/>
-									</g>
-								</svg>
-							</div>
+						<div class="img cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/private-dentist.jpg)">
+							<img class="col-1-1 height-auto" src="<?php bloginfo('template_directory'); ?>/images/home/private-dentist.jpg" />
 						</div>
 						<p class="large font-medium title t-a-c">Private Dentists</a></p>
 						<p class="small description t-a-c color-light">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
 					</div>
 					<div class="col-1-3 one">
-						<div class="img">
-							<div class="cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/aesthetic-clinic.jpg)">
-								<svg xmlns="http://www.w3.org/2000/svg" width="524" height="524.001" viewBox="0 0 524 524.001" class="col-1-1 height-auto display-block">
-									<g transform="translate(-7006 -2725)">
-										<path d="M524,524H0V0H524V524ZM214.856,2c-18.1,0-33.308,1.146-46.5,3.5a145.865,145.865,0,0,0-21.1,5.325,105.478,105.478,0,0,0-19.046,8.549A100.16,100.16,0,0,0,115.22,28.4a120.706,120.706,0,0,0-11.693,10.976A173.189,173.189,0,0,0,83.433,65.917C71.252,85.3,61.3,107.46,52.151,128.5c-8.661,19.759-17.712,41.009-25.227,62.522-3.83,10.963-6.989,21.183-9.656,31.242a326.766,326.766,0,0,0-6.861,32.019A273.29,273.29,0,0,0,7.143,287.4,210.194,210.194,0,0,0,8.47,320.353c2.87,23.2,9.928,43.091,20.977,59.121a122.792,122.792,0,0,0,17.228,19.787,197.938,197.938,0,0,0,21.49,17.347c15.481,10.96,32.708,20.752,50.948,31.118,7.34,4.172,14.927,8.484,22.386,12.877,7.232,4.259,14.529,8.706,21.587,13.007l.009.005c17.613,10.734,35.825,21.834,53.874,30.484a215.039,215.039,0,0,0,27.269,11.037,140.086,140.086,0,0,0,27.831,6.091A128.1,128.1,0,0,0,286.2,522c19.266,0,39.947-4.173,61.472-12.4a286.4,286.4,0,0,0,57.892-30.757c20.863-14.157,38.863-29.7,53.5-46.2,15.637-17.621,27.275-36.173,34.591-55.141a165.56,165.56,0,0,0,6.857-22.547,235.569,235.569,0,0,0,4.115-23.424c2.035-15.886,2.843-32.005,3.7-49.071.555-11.074,1.129-22.522,2.07-33.995.733-8.934,1.707-18.094,2.649-26.952v-.007c1.951-18.342,3.968-37.308,3.95-55.3a181.891,181.891,0,0,0-1.78-26.4,118.934,118.934,0,0,0-6.285-24.91,116.088,116.088,0,0,0-15.458-28.133,151.719,151.719,0,0,0-22.834-24.446,192.387,192.387,0,0,0-28.327-20.213,220.812,220.812,0,0,0-31.936-15.435,251.754,251.754,0,0,0-33.854-10.335c-10.886-2.548-22.437-4.616-35.315-6.324C317.231,6.831,292.956,5.455,267.256,4,249.961,3.016,232.077,2,214.856,2Z" transform="translate(7006 2725)" fill="#1b00e6"/>
-									</g>
-								</svg>
-							</div>
+						<div class="img cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/aesthetic-clinic.jpg)">
+							<img class="col-1-1 height-auto" src="<?php bloginfo('template_directory'); ?>/images/home/aesthetic-clinic.jpg" />
 						</div>
 						<p class="large font-medium title t-a-c">Aesthetic Clinics</a></p>
 						<p class="small description t-a-c color-light">At our agency, our digital marketing team are experts in the Aesthetics market and work closely with you to create the best strategy to maximise the impact your digital marketing has on your Aesthetic clinic.</p>
 					</div>
 					<div class="col-1-3 one">
-						<div class="img">
-							<div class="cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/medical-spas.jpg)">
-								<svg xmlns="http://www.w3.org/2000/svg" width="524" height="524" viewBox="0 0 524 524" class="col-1-1 height-auto display-block">
-									<g transform="translate(-7652 -2725)">
-										<path d="M524,524H0V0H524V524ZM177.336,2a124.385,124.385,0,0,0-24.2,2.227,84.488,84.488,0,0,0-35.214,15.5A114.2,114.2,0,0,0,105.973,30,179.727,179.727,0,0,0,84.39,56.146c-6.155,8.877-12.468,19.182-19.3,31.5-6.209,11.2-12.32,23.115-18,34.326-5.695,11.171-11.723,23.131-17.22,34.907-6.034,12.927-10.844,24.375-14.7,35a236.961,236.961,0,0,0-10,34.938,169.7,169.7,0,0,0-2.55,17.4,134.9,134.9,0,0,0,1.119,34.554A168.194,168.194,0,0,0,7.4,295.89a234.969,234.969,0,0,0,12.145,33.864c4.435,10.093,9.865,20.989,16.6,33.31,5.9,10.786,11.958,21.183,18.7,32.684,6.365,10.855,12.61,21.449,19.016,31.709,7.125,11.412,13.58,20.988,19.734,29.277a221.708,221.708,0,0,0,21.387,25.11,148.772,148.772,0,0,0,11.6,10.451,118.853,118.853,0,0,0,12.368,8.759c13.731,8.351,29.82,14,49.186,17.261S227.752,522,243.213,522c4.882,0,10.073-.046,16.832-.148,9.706-.147,21.129-.379,32.261-.976,11.778-.632,22.1-1.606,31.551-2.978a207.319,207.319,0,0,0,30.2-6.528c4.978-1.5,9.822-3.207,14.4-5.08a140.172,140.172,0,0,0,13.822-6.549,156.425,156.425,0,0,0,25.858-17.826A226.635,226.635,0,0,0,431.8,458.608a343.259,343.259,0,0,0,21.843-27.616c6.622-9.236,13.3-19.3,20.415-30.756,7.345-11.8,13.538-22.5,18.933-32.717A322.29,322.29,0,0,0,508.7,333.49a210.1,210.1,0,0,0,10.339-34.728,156.574,156.574,0,0,0,2.485-17.433,133.28,133.28,0,0,0,.337-17.377,141.8,141.8,0,0,0-6.113-34.192,197.4,197.4,0,0,0-13.549-32.951,278.211,278.211,0,0,0-18.758-30.96c-6.438-9.277-13.752-18.771-21.74-28.22-7.379-8.784-15.047-17.191-22.792-24.989-7.621-7.673-15.54-14.983-23.537-21.726-7.86-6.627-16.027-12.9-24.274-18.647-8.094-5.64-16.506-10.94-25-15.753a350.562,350.562,0,0,0-52.808-23.877c-16.464-5.965-35.024-11.6-58.412-17.719-10.682-2.819-24.731-6.383-38.66-8.942A215.348,215.348,0,0,0,177.336,2Z" transform="translate(7652 2725)" fill="#1b00e6"/>
-									</g>
-								</svg>
-							</div>
+						<div class="img cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/medical-spas.jpg)">
+							<img class="col-1-1 height-auto" src="<?php bloginfo('template_directory'); ?>/images/home/medical-spas.jpg" />
 						</div>
 						<p class="large font-medium title t-a-c">MedSpas</a></p>
 						<p class="small description t-a-c color-light">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
@@ -188,7 +136,7 @@
 								target="_blank"
 								rel='noreferrer'
 							>
-							<button class="background-tertiary color-white hover-background-secondary">Book Free Audit</button>
+							<button class="background-primary color-white hover-background-secondary">Book Free Audit</button>
 						</a>
 					</div>
 					</div>
@@ -236,6 +184,7 @@
 
 	<!--How it Works -->
 
+	<!--
 	<section id="home-page">
 		<section class="how-it-works">
 			<div class="container">
@@ -276,9 +225,11 @@
 			</div>
 		</section>
 	</section>
+	-->
 	
 	<!--Testimonials -->
 
+	<!-- 
 	<section id="home-page">
 		<section class="testimonials">
 			<div class="container">
@@ -289,7 +240,7 @@
 						<p>Hear directly from clinic owners who’ve seen real results — more visibility, more patients, and measurable growth.</p>
 						<div class="flex btn">
 							<a href='<?php echo get_site_url(); ?>/contact-us/' class="display-block">
-								<button class="background-tertiary color-white hover-background-secondary">Contact Us</button>
+								<button class="background-primary color-white hover-background-secondary">Contact Us</button>
 							</a>
 						</div>
 					</div>
@@ -305,7 +256,8 @@
 				</div>
 			</div>
 		</section>
-	</section>
+	</section> 
+	-->
 
 <?php get_footer();?>
 

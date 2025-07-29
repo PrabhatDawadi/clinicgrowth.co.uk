@@ -8,12 +8,12 @@
 <?php get_header(); ?>
 
     <section id='common-page'>
-        <section class='landing landing-with-image pos-rel cover-img' style="background-image: url(<?php echo the_post_thumbnail_url(); ?>);">
+        <section class='landing cover-img' style="background-image: url(<?php echo the_post_thumbnail_url(); ?>);">
             <div class='container'>
                 <div class='txt'>
                     <p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Growth Results</p>
-                    <h2 class='title color-secondary font-bold l-h-1-1'><?php the_title(); ?></h2>
-                    <p class="l-h-1 small color-light" style="margin-top: 8px;"><?php echo get_the_date('F j, Y'); ?></p>
+                    <h2 class='title color-white font-bold l-h-1-1'><?php the_title(); ?></h2>
+                    <p class="l-h-1 small color-white" style="margin-top: 8px;"><?php echo get_the_date('F j, Y'); ?></p>
                 </div>
             </div>
         </section>

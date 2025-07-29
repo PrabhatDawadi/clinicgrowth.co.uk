@@ -18,7 +18,7 @@
 									target="_blank"
 									rel='noreferrer'
 								>
-									<button class="background-tertiary color-white hover-background-secondary">Book Your Free Growth Audit</button>
+									<button class="background-primary color-white hover-background-secondary">Book Your Free Growth Audit</button>
 								</a>
 								</div>
 							</div>

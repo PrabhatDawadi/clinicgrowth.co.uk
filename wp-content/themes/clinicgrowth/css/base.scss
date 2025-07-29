@@ -556,13 +556,28 @@ textarea {
 header {
 	z-index: 999999 !important;
 	padding: 36px 0 28px 0;
+	left: 0;
+	top: 0;
+	width: 100%;
+	position: absolute;
+	.logo,
+	.btn-holder {
+		width: 312px;
+	}
 	.logo {
 		svg {
 			height: 16px;
 		}
 	}
+	.btn-holder {
+		gap: 32px;
+		.phone {
+			gap: 8px;
+		}
+	}
 	nav {
 		ul {
+			width: 100%;
 			display: flex;
 			align-items: center;
 			gap: 60px;
@@ -576,11 +591,76 @@ header {
 					font-family: "Regular";
 					display: block;
 					@include vendorPrefix("transition", "all 0.2s");
+					color: white;
+				}
+				ul {
+					position: absolute;
+					@include vendorPrefix(
+						"transition-timing-function",
+						"ease-in"
+					);
+					@include vendorPrefix("animation", "menu-open 0.2s");
+					@include vendorPrefix("animation-fill-mode", "both");
+					display: none;
+					width: auto;
+					border: solid 1px #f0f0f0;
+					background: white;
+					@include vendorPrefix("border-radius", "4px");
+					@include vendorPrefix(
+						"box-shadow",
+						"0 0 6px rgba(0,0,0,0.06)"
+					);
+					li {
+						display: block;
+						border-bottom: solid 1px #f0f0f0;
+						font-size: 16px;
+						white-space: nowrap;
+						&:last-child {
+							border-bottom: none;
+						}
+						a {
+							padding: 0 16px 0 16px;
+							line-height: 40px;
+							color: #131313;
+						}
+						&:hover {
+							background-color: #f7f9fc;
+							span {
+								span {
+									color: $primaryColor;
+								}
+							}
+						}
+					}
+				}
+				&:hover {
+					ul {
+						display: block;
+					}
+				}
+			}
+			li.menu-item-has-children {
+				position: relative;
+				&:after {
+					position: absolute;
+					content: url(../images//icons/menu-arrow.svg);
+					height: 0px;
+					width: 8px;
+					top: 50%;
+					margin-top: -9px;
+					right: -16px;
 				}
 			}
 			li.current_page_item {
 				a {
-					color: $tertiaryColor;
+					font-family: "Medium";
+				}
+				ul {
+					li {
+						a {
+							font-family: "Regular";
+						}
+					}
 				}
 			}
 		}
@@ -594,7 +674,6 @@ header {
 		left: 12px;
 		cursor: pointer;
 		@include vendorPrefix("border-radius", "4px");
-		@include vendorPrefix("box-shadow", "0px 0px 10px rgba(0,0,0,.24)");
 		z-index: 999999;
 		display: none;
 		padding: 0 4px;

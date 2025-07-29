@@ -8,10 +8,10 @@
 <?php get_header(); ?>
 
 	<section id='common-page'>
-        <section class='landing background-faded'>
+        <section class='landing cover-img' style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/landing-background.jpg);">
             <div class='container'>
                 <div class='txt'>
-                    <h2 class='title color-secondary font-bold l-h-1-1'><?php the_title();?></h2>
+                    <h2 class='title color-white font-bold l-h-1-1'><?php the_title();?></h2>
                 </div>
             </div>
         </section>

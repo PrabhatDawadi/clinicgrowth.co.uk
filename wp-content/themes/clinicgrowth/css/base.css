@@ -667,11 +667,26 @@ textarea {
 header {
   z-index: 999999 !important;
   padding: 36px 0 28px 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+}
+header .logo,
+header .btn-holder {
+  width: 312px;
 }
 header .logo svg {
   height: 16px;
 }
+header .btn-holder {
+  gap: 32px;
+}
+header .btn-holder .phone {
+  gap: 8px;
+}
 header nav ul {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 60px;
@@ -687,9 +702,62 @@ header nav ul li a {
   font-family: "Regular";
   display: block;
   transition: all 0.2s;
+  color: white;
+}
+header nav ul li ul {
+  position: absolute;
+  transition-timing-function: ease-in;
+  animation: menu-open 0.2s;
+  animation-fill-mode: both;
+  display: none;
+  width: auto;
+  border: solid 1px #f0f0f0;
+  background: white;
+  border-radius: 4px;
+  -ms-box-shadow: 0 0 6px rgba(0,0,0,0.06);
+  -o-box-shadow: 0 0 6px rgba(0,0,0,0.06);
+  box-shadow: 0 0 6px rgba(0,0,0,0.06);
+}
+header nav ul li ul li {
+  display: block;
+  border-bottom: solid 1px #f0f0f0;
+  font-size: 16px;
+  white-space: nowrap;
+}
+header nav ul li ul li:last-child {
+  border-bottom: none;
+}
+header nav ul li ul li a {
+  padding: 0 16px 0 16px;
+  line-height: 40px;
+  color: #131313;
+}
+header nav ul li ul li:hover {
+  background-color: #f7f9fc;
+}
+header nav ul li ul li:hover span span {
+  color: #2f80ed;
+}
+header nav ul li:hover ul {
+  display: block;
+}
+header nav ul li.menu-item-has-children {
+  position: relative;
+}
+header nav ul li.menu-item-has-children:after {
+  position: absolute;
+  content: url(../images//icons/menu-arrow.svg);
+  height: 0px;
+  width: 8px;
+  top: 50%;
+  margin-top: -9px;
+  right: -16px;
 }
 header nav ul li.current_page_item a {
-  color: #e53935;
+  font-family: "Medium";
+}
+header nav ul li.current_page_item ul li a {
+  font-family: "Regular";
 }
 header .menu-btn {
   height: 32px;
@@ -700,9 +768,6 @@ header .menu-btn {
   left: 12px;
   cursor: pointer;
   border-radius: 4px;
-  -ms-box-shadow: 0px 0px 10px rgba(0,0,0,.24);
-  -o-box-shadow: 0px 0px 10px rgba(0,0,0,.24);
-  box-shadow: 0px 0px 10px rgba(0,0,0,.24);
   z-index: 999999;
   display: none;
   padding: 0 4px;

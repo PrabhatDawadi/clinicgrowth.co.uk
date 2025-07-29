@@ -12,12 +12,12 @@
 	<?php get_header(); ?>
 
 	<section id='common-page'>
-        <section class='landing background-faded'>
+        <section class='landing cover-img' style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/landing-background.jpg);">
             <div class='container'>
                 <div class='txt'>
-                    <h2 class='title color-secondary font-bold l-h-1-1'>Contact Us</h2>
+                    <h2 class='title color-white font-bold l-h-1-1'>Contact Us</h2>
                     <hr class="background-primary" />
-                    <p>Ready to start a conversation or have questions? Feel free to reach out to us – we're here to help and eager to hear from you!</p>
+                    <p class="color-white">Ready to start a conversation or have questions? Feel free to reach out to us – we're here to help and eager to hear from you!</p>
                 </div>
             </div>
         </section>

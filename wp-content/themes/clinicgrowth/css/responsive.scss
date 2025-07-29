@@ -13,10 +13,17 @@
 
 	header {
 		padding: 28px 0 20px 0;
+		.logo,
+		.btn-holder {
+			width: 300px;
+		}
 		nav {
 			ul {
-				gap: 48px;
+				gap: 36px;
 			}
+		}
+		.btn-holder {
+			gap: 16px;
 		}
 	}
 
@@ -31,17 +38,19 @@
 	// ====== Home Page ====== //
 
 	#home-page {
-		.hero {
+		.landing {
 			.col {
-				height: 680px;
-			}
-			.title {
-				font-size: 48px;
-			}
-			.subtitle {
-				font-size: 18px;
-				line-height: 1.4;
-				margin: 16px 0 24px 0;
+				padding: 240px 0 120px 0;
+				.txt {
+					.title {
+						font-size: 48px;
+					}
+					.subtitle {
+						font-size: 18px;
+						line-height: 1.4;
+						margin: 16px 0 24px 0;
+					}
+				}
 			}
 		}
 		.trust {
@@ -61,6 +70,11 @@
 			}
 			.all {
 				gap: 60px;
+				.one {
+					.img {
+						height: 320px;
+					}
+				}
 			}
 		}
 		.how-it-works {
@@ -76,13 +90,14 @@
 	// ====== Services Page ====== //
 
 	#services-page {
-		.services {
+		.all-services {
 			padding: 80px 0;
+			.row {
+				gap: 40px;
+			}
 			.all {
-				.single {
-					padding-bottom: 32px;
-					margin-bottom: 32px;
-				}
+				grid-row-gap: 12px;
+				grid-column-gap: 12px;
 			}
 		}
 	}
@@ -153,7 +168,7 @@
 
 	#common-page {
 		.landing {
-			padding: 102px 0 80px 0;
+			padding: 160px 0 80px 0;
 		}
 	}
 
@@ -183,6 +198,14 @@
 			padding-left: 24px;
 			padding-right: 24px;
 		}
+		.logo,
+		.btn-holder {
+			width: 312px;
+			width: auto;
+		}
+		.btn-holder {
+			gap: 16px;
+		}
 	}
 
 	// ====== Footer ====== //
@@ -207,35 +230,16 @@
 	// ====== Home Page ====== //
 
 	#home-page {
-		.hero {
+		.landing {
 			.col {
-				height: auto;
-				padding: 40px 0 60px 0;
-				.row {
-					display: block;
-				}
-			}
-			.right {
-				padding: 0;
-				width: auto;
-				max-width: 412px;
-				height: auto;
-				margin: 0 auto;
-				display: block;
-				margin-bottom: 24px;
-			}
-			.left {
-				width: 100%;
-				text-align: center;
-				.btn {
-					justify-content: center;
-					align-items: center;
-				}
-			}
-			.title {
-				text-align: center;
-				br {
-					display: none;
+				padding: 210px 0 102px 0;
+				.txt {
+					.title {
+						text-align: center;
+						br {
+							display: none;
+						}
+					}
 				}
 			}
 		}
@@ -271,6 +275,11 @@
 			}
 			.all {
 				gap: 24px;
+				.one {
+					.img {
+						height: 224px;
+					}
+				}
 			}
 		}
 		.grow {
@@ -379,19 +388,18 @@
 	// ====== Services Page ====== //
 
 	#services-page {
-		.services {
+		.all-services {
 			padding: 60px 0;
-			.all {
-				.single {
-					padding-bottom: 24px;
-					margin-bottom: 24px;
-					.row {
-						gap: 32px;
-					}
-					.img {
-						width: 224px;
-					}
+			.row {
+				display: block;
+				.left {
+					width: 100%;
+					margin-bottom: 48px;
 				}
+			}
+			.all {
+				grid-row-gap: 12px;
+				grid-column-gap: 12px;
 			}
 		}
 	}
@@ -401,18 +409,6 @@
 	#services-single-page {
 		.content {
 			padding: 60px 0;
-			.row {
-				display: block;
-			}
-			.left,
-			.right {
-				width: 100%;
-				padding: 0;
-				display: block;
-			}
-			.right {
-				margin-bottom: 24px;
-			}
 			.other-services {
 				.one {
 					margin-bottom: 24px;
@@ -492,7 +488,7 @@
 
 	#common-page {
 		.landing {
-			padding: 60px 0;
+			padding: 132px 0 60px 0;
 		}
 	}
 
@@ -525,16 +521,13 @@
 		top: 0;
 		z-index: 99;
 		width: 100%;
-		background-color: white;
+		background-color: $secondaryColor;
 		@include vendorPrefix("box-shadow", "0 0 2px rgba(0, 0, 0, 0.12)");
 		.container {
-			padding-left: 12px;
+			padding-left: 56px;
 			padding-right: 12px;
 		}
 		.logo {
-			margin: 0 auto;
-			flex: 1;
-			padding-left: 44px;
 			svg {
 				height: 14px;
 			}
@@ -556,14 +549,14 @@
 			display: block;
 			position: absolute;
 			background-color: $secondaryColor;
-			width: 268px;
+			width: 272px;
 			left: 0;
 			top: 64px;
 			height: 100vh;
 			overflow-y: scroll;
 			z-index: 99;
 			padding: 80px 0 280px 0;
-			@include vendorPrefix("box-shadow", "0px 6px 20px rgba(0,0,0,.16)");
+			@include vendorPrefix("box-shadow", "0px 6px 20px rgba(0,0,0,.48)");
 			@include vendorPrefix("transition-timing-function", "ease-in");
 			@include vendorPrefix("animation", "slide-from-left 0.4s");
 			@include vendorPrefix("animation-fill-mode", "both");
@@ -580,16 +573,70 @@
 						display: block;
 						color: white;
 					}
+					ul {
+						position: relative;
+						@include vendorPrefix(
+							"transition-timing-function",
+							"none"
+						);
+						@include vendorPrefix("animation", "none");
+						@include vendorPrefix("animation-fill-mode", "none");
+						display: block;
+						width: 100%;
+						border: none;
+						background: transparent;
+						@include vendorPrefix("border-radius", "0");
+						@include vendorPrefix("box-shadow", "none");
+						li {
+							border-bottom: solid 1px rgba(255, 255, 255, 0.04);
+							&:last-child {
+								border-bottom: none;
+							}
+							a {
+								padding: 0 12px 0 32px;
+								line-height: 44px;
+								height: 44px;
+								font-size: 14px;
+							}
+							&:hover {
+								background-color: transparent;
+								span {
+									span {
+										color: inherit;
+									}
+								}
+							}
+						}
+					}
 				}
-				li.current_page_item {
-					a {
-						color: $tertiaryColor;
+				li.menu-item-has-children {
+					&:after {
+						top: 22px;
+						right: 22px;
 					}
 				}
 			}
 		}
 		.menu-btn {
 			display: flex;
+		}
+	}
+
+	// ====== Home Page ====== //
+
+	#home-page {
+		.landing {
+			.col {
+				padding: 80px 0;
+			}
+		}
+	}
+
+	// ====== Common Page ====== //
+
+	#common-page {
+		.landing {
+			padding: 60px 0;
 		}
 	}
 }
@@ -626,22 +673,20 @@
 	// ====== Home Page ====== //
 
 	#home-page {
-		.hero {
+		.landing {
 			.col {
-				padding: 40px 0;
-			}
-			.right {
-				max-width: 260px;
-				margin-bottom: 16px;
-			}
-			.title {
-				font-size: 32px;
-			}
-			.subtitle {
-				max-width: 360px;
-				margin: 0 auto;
-				margin-top: 12px;
-				margin-bottom: 20px;
+				padding: 80px 0 60px 0;
+				.txt {
+					.title {
+						font-size: 32px;
+					}
+					.subtitle {
+						max-width: 360px;
+						margin: 0 auto;
+						margin-top: 12px;
+						margin-bottom: 20px;
+					}
+				}
 			}
 		}
 		.trust {
@@ -681,6 +726,10 @@
 					}
 					.img {
 						max-width: 224px;
+						height: auto;
+						img {
+							display: block;
+						}
 					}
 				}
 			}
@@ -734,15 +783,19 @@
 	// ====== Services Page ====== //
 
 	#services-page {
-		.services {
+		.all-services {
+			padding: 48px 0;
+			.row {
+				.left {
+					margin-bottom: 32px;
+				}
+			}
 			.all {
+				display: block;
 				.single {
-					.row {
-						display: block;
-					}
-					.img {
-						margin: 0 auto;
-						margin-bottom: 20px;
+					margin-bottom: 12px;
+					&:last-child {
+						margin-bottom: 0;
 					}
 				}
 			}
@@ -753,16 +806,23 @@
 
 	#services-single-page {
 		.content {
+			padding: 48px 0;
+			.row {
+				display: block;
+			}
+			.left,
+			.right {
+				width: 100%;
+				padding: 0;
+				display: block;
+			}
 			.left {
 				.main-title {
 					font-size: 28px;
 				}
 			}
 			.right {
-				.main-image {
-					max-width: 224px;
-					margin: 0 auto;
-				}
+				display: none;
 			}
 			.other-services {
 				.one {
@@ -803,6 +863,19 @@
 			}
 		}
 	}
+
+	// ====== Common Page ====== //
+
+	#common-page {
+		.landing {
+			h1 {
+				font-size: 32px;
+			}
+			h2 {
+				font-size: 28px;
+			}
+		}
+	}
 }
 
 @media only screen and (max-width: 520px) {
@@ -810,5 +883,25 @@
 		max-width: 100%;
 		padding-left: 16px;
 		padding-right: 16px;
+	}
+
+	header {
+		.btn-holder {
+			.phone {
+				display: none;
+			}
+		}
+	}
+
+	// ====== Services Page ====== //
+
+	#services-page {
+		.all-services {
+			.all {
+				.single {
+					padding: 16px;
+				}
+			}
+		}
 	}
 }
