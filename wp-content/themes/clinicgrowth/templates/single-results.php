@@ -35,7 +35,9 @@
                                     <?php the_title(); ?>
                                 </h2>
                                 <hr class="line" />
-                                <?php the_content(); ?>
+                                <div class="text-editor-content">
+                                    <?php the_content(); ?>
+                                </div>
                                 <hr class="sep background-faded" style="outline: none; border: none; height: 1px;" />
                                 <p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Results</p>
                                 <h6 class="l-h-1 font-lightsss largess">More Case Studies</h6>

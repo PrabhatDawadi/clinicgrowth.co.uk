@@ -22,7 +22,9 @@
             <div class='container-medium'>
                 <div class='container-small'>
                     <div class='inner'>
-                        <?php the_content(); ?>
+                        <div class="text-editor-content">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -30,17 +32,3 @@
 	</section>
 
 <?php get_footer();?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
