@@ -35,7 +35,7 @@ function ourClientTestimonials() {
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_position' => 10,
-        'menu_icon' => site_url()."/wp-content/plugins/client-testimonials/icon.png",
+        'menu_icon' => 'dashicons-feedback',
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'exclude_from_search' => false,

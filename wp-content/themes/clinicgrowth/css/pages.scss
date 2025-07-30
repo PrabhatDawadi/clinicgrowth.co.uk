@@ -63,7 +63,7 @@
 			gap: 80px;
 			.one {
 				.img {
-					height: 380px;
+					height: 258px;
 					margin: 0 auto;
 					img {
 						display: none;
@@ -341,11 +341,9 @@
 	}
 }
 
-/*
-	====================================
-		Text Editor Content
-	====================================
-*/
+/* =================================
+	Text Editor Content
+================================= */
 
 .text-editor-content {
 	hr {
@@ -380,7 +378,11 @@
 		height: 20px;
 	}
 	a {
+		color: $primaryColor;
 		border-bottom: dashed 1px var(--color-text-primary);
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	ul,
 	ol {
@@ -445,6 +447,21 @@
 		height: auto;
 		display: block;
 		margin: 40px 0;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		color: $secondaryColor;
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: "Bold";
 	}
 }
 
@@ -658,18 +675,6 @@
 #common-content {
 	.inner {
 		padding: 80px 0;
-		max-width: 860px;
-		margin: 0 auto;
-	}
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p {
-		color: $secondaryColor;
-		margin: 20px 0;
 	}
 	a {
 		color: $primaryColor;

@@ -66,7 +66,7 @@
   gap: 80px;
 }
 #home-page .help .all .one .img {
-  height: 380px;
+  height: 258px;
   margin: 0 auto;
 }
 #home-page .help .all .one .img img {
@@ -322,11 +322,9 @@
   margin-bottom: 16px;
 }
 
-/*
-	====================================
-		Text Editor Content
-	====================================
-*/
+/* =================================
+	Text Editor Content
+================================= */
 .text-editor-content hr {
   outline: none;
   border: none;
@@ -357,7 +355,11 @@
   height: 20px;
 }
 .text-editor-content a {
+  color: #2f80ed;
   border-bottom: dashed 1px var(--color-text-primary);
+}
+.text-editor-content a:hover {
+  text-decoration: underline;
 }
 .text-editor-content ul,
 .text-editor-content ol {
@@ -424,6 +426,21 @@
   height: auto;
   display: block;
   margin: 40px 0;
+}
+.text-editor-content h1,
+.text-editor-content h2,
+.text-editor-content h3,
+.text-editor-content h4,
+.text-editor-content h5,
+.text-editor-content h6,
+.text-editor-content p {
+  color: #1a1a1a;
+}
+.text-editor-content h1,
+.text-editor-content h2,
+.text-editor-content h3,
+.text-editor-content h4 {
+  font-family: "Bold";
 }
 
 /* =================================
@@ -618,18 +635,6 @@
 
 #common-content .inner {
   padding: 80px 0;
-  max-width: 860px;
-  margin: 0 auto;
-}
-#common-content h1,
-#common-content h2,
-#common-content h3,
-#common-content h4,
-#common-content h5,
-#common-content h6,
-#common-content p {
-  color: #1a1a1a;
-  margin: 20px 0;
 }
 #common-content a {
   color: #2f80ed;

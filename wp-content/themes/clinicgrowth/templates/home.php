@@ -20,8 +20,8 @@
 			<section class="container">
 				<div class="col-1-1 col flex center-center">
 					<div class="txt mar-0-a">
-						<h1 class="font-bold t-a-c l-h-1-1 mar-0-a title color-white">We help private clinics <br/>attract 10–30 new <br/><span class="color-primary">high-value patients</span> <br/>every month.</h1>
-						<h2 class="font-regular t-a-c color-white subtitle l-h-1-2">Specialist marketing for dentists & aesthetic clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
+						<h1 class="font-bold t-a-c l-h-1-1 mar-0-a title color-white"> Guaranteed <span class="color-primary">Results</span>, <br/>Real <span class="color-primary">Clients</span>, Real <span class="color-primary">ROI</span><br/>- or Your Money Back</h1>
+						<h2 class="font-regular t-a-c color-white subtitle l-h-1-2">Specialist marketing for Dentists & Aesthetic Clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
 						<div class="flex center-center btn">
 							<a
 								class="display-block"
@@ -92,29 +92,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="all flex">
-					<div class="col-1-3 one">
-						<div class="img cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/private-dentist.jpg)">
-							<img class="col-1-1 height-auto" src="<?php bloginfo('template_directory'); ?>/images/home/private-dentist.jpg" />
-						</div>
-						<p class="large font-medium title t-a-c">Private Dentists</a></p>
-						<p class="small description t-a-c color-light">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
-					</div>
-					<div class="col-1-3 one">
-						<div class="img cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/aesthetic-clinic.jpg)">
-							<img class="col-1-1 height-auto" src="<?php bloginfo('template_directory'); ?>/images/home/aesthetic-clinic.jpg" />
-						</div>
-						<p class="large font-medium title t-a-c">Aesthetic Clinics</a></p>
-						<p class="small description t-a-c color-light">At our agency, our digital marketing team are experts in the Aesthetics market and work closely with you to create the best strategy to maximise the impact your digital marketing has on your Aesthetic clinic.</p>
-					</div>
-					<div class="col-1-3 one">
-						<div class="img cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/medical-spas.jpg)">
-							<img class="col-1-1 height-auto" src="<?php bloginfo('template_directory'); ?>/images/home/medical-spas.jpg" />
-						</div>
-						<p class="large font-medium title t-a-c">MedSpas</a></p>
-						<p class="small description t-a-c color-light">Our dental marketing experts specialise in marketing dentistry and helping dentists grow their practices. We create tailored digital marketing strategies designed to increase patient bookings, boost your online visibility, and deliver real results.</p>
-					</div>
-				</div>
+				<?php get_all_who_we_help(3); ?>
 			</div>
 		</section>
 	</section>

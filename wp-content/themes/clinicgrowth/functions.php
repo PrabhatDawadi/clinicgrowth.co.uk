@@ -330,5 +330,52 @@
 		}
 
 	// =======================================
+	//			Who We Help Cards
+	// =======================================
+
+		function get_all_who_we_help($limit='-1') {
+			if (is_plugin_active('who-we-help/index.php')) {
+
+				$allPosts = new WP_Query(
+					array(
+						'post_type'			=> 'who-we-help', 
+						'post_status'		=> 'publish', 
+						'posts_per_page'	=> $limit,
+						'order_by'			=> 'menu_order', 
+						'order'				=> 'asc'
+					)
+				);
+
+				if ($allPosts->have_posts()):
+					echo '<div class="flex all">';
+						while($allPosts->have_posts()):$allPosts->the_post();
+							echo '<div class="col-1-3 one">';
+								echo '<div class="img cover-img" style="background-image: url(';
+									echo the_post_thumbnail_url();
+								echo ')">';
+									echo '<img class="col-1-1 height-auto" src="';
+										echo the_post_thumbnail_url();
+									echo '" alt="' . get_the_title() . '" />';
+								echo '</div>';
+								echo '<p class="large font-medium title t-a-c">';
+									echo '<a href="'. get_the_permalink() . '" title="';
+										echo get_the_title();
+									echo '">';
+										echo get_the_title();
+									echo '</a>';		
+								echo '</p>';
+								echo '<p class="small description t-a-c color-light">';
+									echo substr(strip_tags(get_the_content()), 0, 480);
+								echo '</p>';
+							echo '</div>';
+						endwhile;
+					echo '</div>';
+					wp_reset_postdata();
+				else :
+				endif;
+			}
+		}
+
+	// =======================================
 	//			END OF FUNCTIONS
 	// =======================================

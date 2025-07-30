@@ -34,7 +34,7 @@ function ourServices() {
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_position' => 5,
-        'menu_icon' => site_url()."/wp-content/plugins/services/icon.png",
+        'menu_icon' => 'dashicons-admin-settings',
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'exclude_from_search' => false,

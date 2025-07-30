@@ -48,7 +48,7 @@
     gap: 60px;
   }
   #home-page .help .all .one .img {
-    height: 320px;
+    height: 212px;
   }
   #home-page .how-it-works .top {
     margin-bottom: 60px;
@@ -177,7 +177,7 @@
     gap: 24px;
   }
   #home-page .help .all .one .img {
-    height: 224px;
+    height: 148px;
   }
   #home-page .grow .row {
     display: block;
@@ -535,7 +535,7 @@
     margin-bottom: 0;
   }
   #home-page .help .all .one .img {
-    max-width: 224px;
+    max-width: 100%;
     height: auto;
   }
   #home-page .help .all .one .img img {
