@@ -36,7 +36,7 @@
 								<br />
 								<p class="_link"><a class="transition hover-color-primary" href='<?php echo get_site_url(); ?>/'>Home</a></p>
 								<p class="_link"><a class="transition hover-color-primary" href='<?php echo get_site_url(); ?>/services/'>Services</a></p>
-								<p class="_link"><a class="transition hover-color-primary" href='<?php echo get_site_url(); ?>/results/'>Results</a></p>
+								<!-- <p class="_link"><a class="transition hover-color-primary" href='<?php echo get_site_url(); ?>/results/'>Results</a></p> -->
 								<p class="_link"><a class="transition hover-color-primary" href='<?php echo get_site_url(); ?>/contact-us/'>Contact Us</a></p>
 							</div>
 							<div class='col'>

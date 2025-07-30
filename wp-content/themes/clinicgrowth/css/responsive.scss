@@ -886,6 +886,20 @@
 	}
 
 	header {
+		.container {
+			max-width: 100%;
+			padding-left: 56px;
+			padding-right: 12px;
+		}
+		.logo {
+			a {
+				display: block;
+			}
+			svg {
+				width: auto;
+				display: block;
+			}
+		}
 		.btn-holder {
 			.phone {
 				display: none;

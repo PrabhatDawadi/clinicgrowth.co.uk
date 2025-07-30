@@ -639,6 +639,18 @@
     padding-left: 16px;
     padding-right: 16px;
   }
+  header .container {
+    max-width: 100%;
+    padding-left: 56px;
+    padding-right: 12px;
+  }
+  header .logo a {
+    display: block;
+  }
+  header .logo svg {
+    width: auto;
+    display: block;
+  }
   header .btn-holder .phone {
     display: none;
   }
