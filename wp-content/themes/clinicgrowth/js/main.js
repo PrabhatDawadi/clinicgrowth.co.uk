@@ -104,25 +104,21 @@ $(function () {
 	//			1.5 Video Play Pop
 	// ================================================================
 
-	const openPlayVideo = (url) => {
-		$("#video-player").fadeIn(200);
-		const t = $("#video-player video");
-		t.attr("src", url);
+	const openCalendarBooking = () => {
+		$("#calendar-booking").fadeIn(200);
 	};
-	const closePlayVideo = () => {
-		const t = $("#video-player video");
-		t.attr("src", "");
-		$("#video-player").fadeOut(200);
+	const closeCalendarBooking = () => {
+		$("#calendar-booking").fadeOut(200);
 	};
-	$(document).on("click", ".play-video", function (e) {
-		openPlayVideo(this.getAttribute("data-video-url"));
+	$(document).on("click", ".open-calendar-booking", function (e) {
+		openCalendarBooking();
 	});
-	$(".close-video").on("click", function () {
-		closePlayVideo();
+	$(".close-calendar-booking").on("click", function () {
+		closeCalendarBooking();
 	});
-	$(document).on("click", "#video-player .wrap", function (e) {
+	$(document).on("click", "#calendar-booking .wrap", function (e) {
 		if (e.target == this) {
-			closePlayVideo();
+			closeCalendarBooking();
 		}
 	});
 

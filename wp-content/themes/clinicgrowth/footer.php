@@ -12,14 +12,7 @@
 							</div>
 							<div class="col-1-4 right">
 								<div class="flex center-right btn">
-								<a
-									class="display-block"
-									href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
-									target="_blank"
-									rel='noreferrer'
-								>
-									<button class="background-primary color-white hover-background-secondary">Book Your Free Growth Audit</button>
-								</a>
+									<button class="open-calendar-booking background-primary color-white hover-background-secondary">Book Your Free Videography Shoot</button>
 								</div>
 							</div>
 						</div>				
@@ -83,14 +76,14 @@
 										<?php echo $settings['website']['EMAIL']; ?>
 									</a>
 								</p>
-								<p class="_link">
+								<!-- <p class="_link">
 									<a 
 										class="transition hover-color-primary" 
 										href='mailto:<?php echo $settings['website']['PHONE_URL']; ?>'
 									>
 										<?php echo $settings['website']['PHONE_TEXT']; ?>
 									</a>
-								</p>
+								</p> -->
 							</div>
 						</div>
 					</div>

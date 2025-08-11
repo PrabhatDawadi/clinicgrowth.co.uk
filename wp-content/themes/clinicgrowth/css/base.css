@@ -815,29 +815,29 @@ footer .bottom {
   margin-top: 48px;
 }
 
-#video-player {
+#calendar-booking {
   position: fixed;
   inset: 0;
   z-index: 9999999;
   display: none;
 }
-#video-player .wrap {
+#calendar-booking .wrap {
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.86);
+  background: rgba(26, 26, 26, 0.86);
   padding: 16px;
 }
-#video-player .wrap .close {
+#calendar-booking .wrap .close {
   position: absolute;
   top: -12px;
   right: -12px;
   cursor: pointer;
   z-index: 999;
 }
-#video-player .wrap .close svg path {
+#calendar-booking .wrap .close svg path {
   fill: #2f80ed;
 }
-#video-player .wrap video {
+#calendar-booking .wrap video {
   max-width: 100%;
   max-height: 100%;
   display: block;

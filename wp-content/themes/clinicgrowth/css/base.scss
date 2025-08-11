@@ -732,7 +732,7 @@ footer {
 
 // ====== Video Player
 
-#video-player {
+#calendar-booking {
 	position: fixed;
 	inset: 0;
 	z-index: 9999999;
@@ -740,7 +740,7 @@ footer {
 	.wrap {
 		height: 100vh;
 		width: 100vw;
-		background: rgba(0, 0, 0, 0.86);
+		background: rgba(26, 26, 26, 0.86);
 		padding: 16px;
 		.close {
 			position: absolute;

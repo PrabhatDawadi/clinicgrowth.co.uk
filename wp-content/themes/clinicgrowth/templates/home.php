@@ -23,14 +23,7 @@
 						<h1 class="font-bold t-a-c l-h-1-1 mar-0-a title color-white"> Guaranteed <span class="color-primary">Results</span>, <br/>Real <span class="color-primary">Clients</span>, Real <span class="color-primary">ROI</span><br/>- or Your Money Back</h1>
 						<h2 class="font-regular t-a-c color-white subtitle l-h-1-2">Specialist marketing for Dentists & Aesthetic Clinics: Paid Ads, Social Media Content & CRM Systems — All Done For You</h2>
 						<div class="flex center-center btn">
-							<a
-								class="display-block"
-								href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
-								target="_blank"
-								rel='noreferrer'
-							>
-								<button class="background-primary color-white hover-background-secondary hover-color-white">Book Your Free Growth Audit</button>
-							</a>
+							<button class="open-calendar-booking background-primary color-white hover-background-secondary hover-color-white">Book Your Free Videography Shoot</button>
 						</div>
 					</div>
 				</div>
@@ -108,15 +101,8 @@
 						<h3 class="font-bold color-secondary">How We Grow Your Clinic</h3>
 						<p>We help your clinic get seen, generate more patient enquiries, and convert those into bookings.</p>
 						<div class="flex btn">
-							<a
-								class="display-block"
-								href='<?php echo $settings['website']['FREE_AUDIT_URL']; ?>' 
-								target="_blank"
-								rel='noreferrer'
-							>
-							<button class="background-primary color-white hover-background-secondary">Book Free Audit</button>
-						</a>
-					</div>
+							<button class="open-calendar-booking background-primary color-white hover-background-secondary">Free Videography Shoot</button>
+						</div>
 					</div>
 					<div class="col-3-5 right">
 						<div class="all">
