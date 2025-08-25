@@ -113,30 +113,41 @@
 									</svg>
 								</div>
 								<div class="flex-1 desc">
-									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">Higher Visibility</p>
-									<p class="small color-light">We design and optimise your website for maximum reach through SEO and targeted advertising, so your clinic gets seen by the right people.</p>
+									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">Stand-Out Content — Free Shoot Included</p>
+									<p class="small color-light">We kick things off with a complimentary videography shoot so your ads and socials instantly grab attention.</p>
 								</div>
 							</div>
 							<div class="one flex center-left">
 								<div class="icon flex center-center b-r-100 background-faded">
-									<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
-  										<path d="M-406.707-520.293-410.414-524H-416a3,3,0,0,1-3-3v-1a1,1,0,0,1,1-1,1,1,0,0,1,1,1v1a1,1,0,0,0,1,1h6a1,1,0,0,1,.707.293l2.293,2.293V-532a1,1,0,0,0-1-1h-2a1,1,0,0,1-1-1,1,1,0,0,1,1-1h2a3,3,0,0,1,3,3v11a1,1,0,0,1-.617.924A1,1,0,0,1-406-520,1,1,0,0,1-406.707-520.293Zm-19.676-6.783A1,1,0,0,1-427-528v-11a3,3,0,0,1,3-3h8a3,3,0,0,1,3,3v5a3,3,0,0,1-3,3h-5.586l-3.707,3.707A1,1,0,0,1-426-527,1,1,0,0,1-426.383-527.076ZM-425-539v8.586l2.292-2.293A1,1,0,0,1-422-533h6a1,1,0,0,0,1-1v-5a1,1,0,0,0-1-1h-8A1,1,0,0,0-425-539Z" transform="translate(427 542)"/>
+									<svg xmlns="http://www.w3.org/2000/svg" width="21.683" height="22" viewBox="0 0 21.683 22">
+  										<path d="M18.3,23H4a3,3,0,0,1-3-3V13a3,3,0,0,1,3-3H6.35l3.736-8.406A1,1,0,0,1,11,1a4,4,0,0,1,4,4V8h4.656a3,3,0,0,1,2.993,3.45l-1.38,9A3.013,3.013,0,0,1,18.3,23ZM8,21H18.3a1,1,0,0,0,.989-.85l1.38-9a1,1,0,0,0-1-1.149H14a1,1,0,0,1-1-1V5a2,2,0,0,0-1.392-1.906L8,11.212ZM4,12a1,1,0,0,0-1,1v7a1,1,0,0,0,1,1H6V12Z" transform="translate(-1 -1)"/>
 									</svg>
 								</div>
 								<div class="flex-1 desc">
-									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">More Enquiries</p>
-									<p class="small color-light">Our high-converting landing pages, clear messaging, and powerful calls-to-action are crafted to turn visitors into patient enquiries.</p>
+									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">Ads That Work</p>
+									<p class="small color-light">Our targeted Meta & Google campaigns get your clinic seen by the right people — delivering enquiries from day one.</p>
 								</div>
 							</div>
 							<div class="one flex center-left">
 								<div class="icon flex center-center b-r-100 background-faded">
-									<svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
-  										<path d="M-473-555v-2h-2a1,1,0,0,1-1-1,1,1,0,0,1,1-1h2v-2a1,1,0,0,1,1-1,1,1,0,0,1,1,1v2h2a1,1,0,0,1,1,1,1,1,0,0,1-1,1h-2v2a1,1,0,0,1-1,1A1,1,0,0,1-473-555Zm-13,1a3,3,0,0,1-3-3v-14a3,3,0,0,1,3-3h2v-1a1,1,0,0,1,1-1,1,1,0,0,1,1,1v1h6v-1a1,1,0,0,1,1-1,1,1,0,0,1,1,1v1h2a3,3,0,0,1,3,3v7a1,1,0,0,1-1,1,1,1,0,0,1-1-1v-2h-16v9a1,1,0,0,0,1,1h8a1,1,0,0,1,1,1,1,1,0,0,1-1,1Zm15-14v-3a1,1,0,0,0-1-1h-2v1a1,1,0,0,1-1,1,1,1,0,0,1-1-1v-1h-6v1a1,1,0,0,1-1,1,1,1,0,0,1-1-1v-1h-2a1,1,0,0,0-1,1v3Z" transform="translate(489 576)"/>
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  										<path d="M-624-464a2.994,2.994,0,0,1,.113-.818l-1.554-1.11A3.983,3.983,0,0,1-628-465a3.981,3.981,0,0,1-2.559-.928l-1.554,1.11A2.991,2.991,0,0,1-632-464a3,3,0,0,1-3,3,3,3,0,0,1-3-3,3,3,0,0,1,3-3,2.985,2.985,0,0,1,1.73.55l1.542-1.1A3.978,3.978,0,0,1-632-469a4.008,4.008,0,0,1,3-3.874v-2.3A3.005,3.005,0,0,1-631-478v0a3,3,0,0,1,3-3,2.977,2.977,0,0,1,2.121.878A2.979,2.979,0,0,1-625-478a3.005,3.005,0,0,1-2,2.828v2.3a3.978,3.978,0,0,1,1.829,1.046A3.978,3.978,0,0,1-624-469a3.978,3.978,0,0,1-.272,1.449l1.542,1.1A2.983,2.983,0,0,1-621-467a3,3,0,0,1,3,3,3,3,0,0,1-3,3A3,3,0,0,1-624-464Zm2,0a1,1,0,0,0,1,1,1,1,0,0,0,1-1,1,1,0,0,0-1-1A1,1,0,0,0-622-464Zm-14,0a1,1,0,0,0,1,1,1,1,0,0,0,1-1,1,1,0,0,0-1-1A1,1,0,0,0-636-464Zm6-5a2,2,0,0,0,2,2,2,2,0,0,0,2-2,1.986,1.986,0,0,0-.585-1.414A1.987,1.987,0,0,0-628-471,2,2,0,0,0-630-469Zm1-9a1,1,0,0,0,1,1,1,1,0,0,0,1-1,.993.993,0,0,0-.292-.707A.993.993,0,0,0-628-479,1,1,0,0,0-629-478Z" transform="translate(638 481)"/>
 									</svg>
 								</div>
 								<div class="flex-1 desc">
-									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">More Bookings</p>
-									<p class="small color-light">With proven strategies in CRM, follow-ups, and user experience, we help you turn more enquiries into confirmed appointments.</p>
+									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">Social That Sells</p>
+									<p class="small color-light">Scroll-stopping organic content builds trust, authority, and a loyal following that keeps patients coming back.</p>
+								</div>
+							</div>
+							<div class="one flex center-left">
+								<div class="icon flex center-center b-r-100 background-faded">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 12 18">
+  										<path d="M12,21a1,1,0,0,1-.514-.143l-5-3A1,1,0,0,1,6,17V4a1,1,0,0,1,1.515-.857L12,5.834l4.486-2.691A1,1,0,0,1,18,4V17a1,1,0,0,1-.486.857l-5,3A1,1,0,0,1,12,21ZM8,16.434l4,2.4,4-2.4V5.766L12.514,7.857a1,1,0,0,1-1.029,0L8,5.766Z" transform="translate(-6 -3)"/>
+									</svg>
+								</div>
+								<div class="flex-1 desc">
+									<p class="l-h-1 large font-medium" style="margin-bottom: 8px;">From Leads to Loyal Patients</p>
+									<p class="small color-light">With smart CRM systems and proven follow-up strategies, we turn more enquiries into confirmed bookings.</p>
 								</div>
 							</div>
 						</div>
