@@ -53,6 +53,17 @@
 				}
 			}
 		}
+		.info {
+			padding: 60px 0;
+			.all {
+				.one {
+					svg {
+						height: 40px;
+						margin-bottom: 16px;
+					}
+				}
+			}
+		}
 		.trust {
 			.right {
 				gap: 28px;
@@ -241,6 +252,12 @@
 						}
 					}
 				}
+			}
+		}
+		.info {
+			padding: 48px 0;
+			.all {
+				max-width: 572px;
 			}
 		}
 		.trust {
@@ -685,6 +702,40 @@
 						margin: 0 auto;
 						margin-top: 12px;
 						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+		.info {
+			.all {
+				max-width: 100%;
+				display: block;
+				.one {
+					width: 100%;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					text-align: left;
+					gap: 24px;
+					margin-bottom: 24px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+					.i {
+						background-color: rgba(255, 255, 255, 0.04);
+						width: 72px;
+						height: 72px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						@include vendorPrefix("border-radius", "4px");
+						svg {
+							height: 32px;
+							margin: 0;
+						}
+					}
+					.d {
+						flex: 1;
 					}
 				}
 			}

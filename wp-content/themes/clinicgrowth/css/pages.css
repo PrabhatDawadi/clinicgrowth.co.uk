@@ -35,6 +35,20 @@
   font-size: 22px;
   margin: 24px 0 32px 0;
 }
+#home-page .info {
+  background-color: #1f4075;
+  padding: 80px 0;
+}
+#home-page .info .all {
+  max-width: 860px;
+}
+#home-page .info .all .one svg {
+  height: 60px;
+  margin-bottom: 20px;
+}
+#home-page .info .all .one svg path {
+  fill: #3966ac;
+}
 #home-page .trust {
   padding: 60px 0;
 }

@@ -38,6 +38,22 @@
 			}
 		}
 	}
+	.info {
+		background-color: #1f4075;
+		padding: 80px 0;
+		.all {
+			max-width: 860px;
+			.one {
+				svg {
+					height: 60px;
+					margin-bottom: 20px;
+					path {
+						fill: #3966ac;
+					}
+				}
+			}
+		}
+	}
 	.trust {
 		padding: 60px 0;
 		.right {

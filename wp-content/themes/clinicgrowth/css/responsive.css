@@ -32,6 +32,13 @@
     line-height: 1.4;
     margin: 16px 0 24px 0;
   }
+  #home-page .info {
+    padding: 60px 0;
+  }
+  #home-page .info .all .one svg {
+    height: 40px;
+    margin-bottom: 16px;
+  }
   #home-page .trust .right {
     gap: 28px;
   }
@@ -143,6 +150,12 @@
   }
   #home-page .landing .col .txt .title br {
     display: none;
+  }
+  #home-page .info {
+    padding: 48px 0;
+  }
+  #home-page .info .all {
+    max-width: 572px;
   }
   #home-page .trust {
     padding: 48px 0;
@@ -497,6 +510,38 @@
     margin: 0 auto;
     margin-top: 12px;
     margin-bottom: 20px;
+  }
+  #home-page .info .all {
+    max-width: 100%;
+    display: block;
+  }
+  #home-page .info .all .one {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  #home-page .info .all .one:last-child {
+    margin-bottom: 0;
+  }
+  #home-page .info .all .one .i {
+    background-color: rgba(255, 255, 255, 0.04);
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  #home-page .info .all .one .i svg {
+    height: 32px;
+    margin: 0;
+  }
+  #home-page .info .all .one .d {
+    flex: 1;
   }
   #home-page .trust {
     padding: 48px 0 32px 0;
