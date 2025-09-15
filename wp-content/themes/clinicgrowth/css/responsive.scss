@@ -70,6 +70,7 @@
 			}
 		}
 		.help,
+		.faqs,
 		.grow,
 		.how-it-works,
 		.testimonials {
@@ -86,6 +87,14 @@
 						height: 212px;
 					}
 				}
+			}
+		}
+		.faqs {
+			.top {
+				margin-bottom: 60px;
+			}
+			.row {
+				gap: 60px;
 			}
 		}
 		.how-it-works {
@@ -275,6 +284,7 @@
 			}
 		}
 		.help,
+		.faqs,
 		.grow,
 		.how-it-works,
 		.testimonials {
@@ -296,6 +306,21 @@
 					.img {
 						height: 148px;
 					}
+				}
+			}
+		}
+		.faqs {
+			.top {
+				margin-bottom: 40px;
+			}
+			.row {
+				display: block;
+				.left,
+				.right {
+					width: 100%;
+				}
+				.right {
+					margin-top: 40px;
 				}
 			}
 		}

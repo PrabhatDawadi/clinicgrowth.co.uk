@@ -176,4 +176,14 @@ $(function () {
 		keyboard: true,
 		multipleKeyboard: false,
 	});
+
+	// ================================================================
+	//			1.6 FAQs Open Close
+	// ================================================================
+
+	$(document).on("click", ".faq-one .question", function (e) {
+		const el = $(this).parent().eq(0).find(".answer");
+		el.slideToggle(200);
+		$(this).toggleClass("open");
+	});
 });

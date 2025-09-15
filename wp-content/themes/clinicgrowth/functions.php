@@ -377,5 +377,48 @@
 		}
 
 	// =======================================
+	//			Our FAQs
+	// =======================================
+
+		function get_all_clinic_growth_faqs($limit='-1') {
+			if (is_plugin_active('clinic-growth-faqs/index.php')) {
+
+				$allPosts = new WP_Query(
+					array(
+						'post_type'			=> 'clinic-growth-faqs', 
+						'post_status'		=> 'publish', 
+						'posts_per_page'	=> $limit,
+						'order_by'			=> 'menu_order', 
+						'order'				=> 'asc'
+					)
+				);
+				if ($allPosts->have_posts()):
+					echo '<div class="faq">';
+						while($allPosts->have_posts()):$allPosts->the_post();
+							echo '<div class="faq-one">';
+								echo '<div class="question">';
+									echo '<div class="col-1-1 flex center-left" style="gap: 12px;">';
+										echo '<div class="i transition pos-rel" style="height: 28px; width: 28px;">';
+										echo '</div>';
+										echo '<div class="flex-1 hover-color-primary">';
+										echo '<p class="l-h-1-2 large font-medium transition">';
+											echo get_the_title();
+										echo '</p>';
+										echo '</div>';
+									echo '</div>';
+								echo '</div>';
+								echo '<div class="answer">';
+										echo the_content();
+								echo '</div>';
+							echo '</div>';
+						endwhile;
+					echo '</div>';
+					wp_reset_postdata();
+				else :
+				endif;
+			}
+		}
+
+	// =======================================
 	//			END OF FUNCTIONS
 	// =======================================

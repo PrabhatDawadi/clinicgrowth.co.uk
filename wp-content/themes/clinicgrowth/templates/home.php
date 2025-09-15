@@ -137,6 +137,34 @@
 		</section>
 	</section>
 
+	<!-- FAQs -->
+
+	<section id="home-page">
+		<section class="faqs">
+			<div class="container">
+				<div class="top">
+					<p class="l-h-1 small color-primary t-a-c">FAQs</p>
+					<h3 class="font-bold color-secondary t-a-c">Frequently Asked Questions Answered by our Director Emma Chauvet</h3>
+				</div>
+				<div class="col-1-1 flex row">
+					<div class="col-1-2 left">
+						<div class="img">
+							<img class="col-1-1 height-auto display-block mar-0-a" alt="emma-chauvet" src="<?php bloginfo('template_directory'); ?>/images/home/emma-chauvet-director.jpg" />
+							<br/>
+							<div>
+								<p class="color-light l-h-1-2">Emma Chauvet</p>
+								<p class="color-light l-h-1-2" style="font-size: 12px;">Director, ClinicGrowth</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-1-2 right">
+						<?php get_all_clinic_growth_faqs(-1); ?>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+
 	<!--Grow -->
 
 	<section id="home-page">
