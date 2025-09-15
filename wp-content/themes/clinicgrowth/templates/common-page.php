@@ -8,7 +8,7 @@
 <?php get_header(); ?>
 
 	<?php
-        $background_image = has_post_thumbnail() ? get_the_post_thumbnail_url(null, 'full') : get_template_directory_uri() . '/images/home/landing-background.jpg';
+        $background_image = has_post_thumbnail() ? get_the_post_thumbnail_url(null, 'full') : get_template_directory_uri() . '/images/home/clinic-growth-cover.jpg';
     ?>
 
     <section id='common-page'>

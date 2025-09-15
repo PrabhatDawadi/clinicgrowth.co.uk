@@ -8,7 +8,7 @@
 <?php get_header(); ?>
 
     <section id='common-page'>
-        <section class='landing cover-img' style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/landing-background.jpg);">
+        <section class='landing cover-img' style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/clinic-growth-cover.jpg);">
             <div class='container'>
                 <div class='txt'>
                     <p class="l-h-1 small color-primary" style="margin-bottom: 8px;">Our Services</p>

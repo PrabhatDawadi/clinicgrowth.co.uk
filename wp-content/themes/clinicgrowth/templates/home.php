@@ -16,7 +16,7 @@
 	<!-- Hero Landing -->
 
 	<section id="home-page">
-		<section class="landing cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/landing-background.jpg);">
+		<section class="landing cover-img" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/clinic-growth-cover.jpg);">
 			<section class="container">
 				<div class="col-1-1 col flex center-center">
 					<div class="txt mar-0-a">

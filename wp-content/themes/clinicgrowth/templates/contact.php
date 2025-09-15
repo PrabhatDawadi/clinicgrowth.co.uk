@@ -12,7 +12,7 @@
 	<?php get_header(); ?>
 
 	<section id='common-page'>
-        <section class='landing cover-img' style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/landing-background.jpg);">
+        <section class='landing cover-img' style="background-image: url(<?php bloginfo('template_directory'); ?>/images/home/clinic-growth-cover.jpg);">
             <div class='container'>
                 <div class='txt'>
                     <h2 class='title color-white font-bold l-h-1-1'>Contact Us</h2>
